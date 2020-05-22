@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name = "gen3-augur-pyutils",
+    name = "gen3-augur",
     author = "Yilin Xu",
     author_email = "yilinxu@uchicago.edu",
     version = 0.1, 
@@ -11,6 +11,6 @@ setup(
     python_requires='>=3.5',
     entry_points= ''' 
         [console_scripts]
-        gen3-augur-pyutils=gen3-augur-pyutils.__main__:main
+        gen3-augur=gen3-augur.__main__:main
     ''', 
 )
