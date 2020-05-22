@@ -9,6 +9,7 @@ setup(
     description = "Utility tools for data accessing from gen3 and data processing with augur",
     license = "Apache 2.0",
     packages = find_packages(exclude=["*test*"]),
+    include_package_data=True,
     python_requires='>=3.5',
     entry_points= ''' 
         [console_scripts]
