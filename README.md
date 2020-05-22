@@ -12,5 +12,11 @@ Then activate the environment for use:
 conda activate gen3-augur
 ```
 
-## Gen3 Client installation
+## Gen3 Client installation and configuration
 Download the latest MacOS X or Linux version of the gen3-client [here](https://github.com/uc-cdis/cdis-data-client/releases/tag/2020.05)
+Update the executable gen3-client `/gen3/gen3-client.ext`
+Open a terminal window
+Add the directory containing the executable to your Path enviroment variable:
+```
+echo 'export PATH=$PATH:~/.gen3' >> ~/.bash_profile
+```
