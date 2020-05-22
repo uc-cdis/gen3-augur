@@ -1,0 +1,2 @@
+organism,mol_type,isolate,host,db_xref,country,collection_date,note,strain,file,accession,object_id,md5sum,file_name,file_size
+Severe acute respiratory syndrome coronavirus 2,genomic RNA,SARS-CoV-2/human/IND/GBRC78b/2020,Homo sapiens,taxon:2697049,India: Modasa,2020-05-05,S1674b,SARS-CoV-2/human/IND/GBRC78b/2020,mt483702.gb,MT483702,dg.63D5/67e9eace-5e44-46fa-80ec-71a51437a932,ac9a2a48c5c9358aea5d332e4aaa6547,mt483702.gb,56513
