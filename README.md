@@ -35,5 +35,6 @@ gen3-client auth --profile=<profile-name>
 ```
 
 ### Download object file using manifest.json
-```gen3-client download-multiple --profile=<profile-name> --manifest=data/<your manifest.json> --download-path=<your download folder>
+```
+gen3-client download-multiple --profile=<profile-name> --manifest=data/<your manifest.json> --download-path=<your download folder>
 ```
