@@ -11,6 +11,10 @@ setup(
     packages = find_packages(exclude=["*test*"]),
     include_package_data=True,
     python_requires='>=3.5',
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "Operating System :: OS Independent",
+    ],
     entry_points= ''' 
         [console_scripts]
         gen3-augur=gen3-augur.__main__:main
