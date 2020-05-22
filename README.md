@@ -11,3 +11,6 @@ Then activate the environment for use:
 ```
 conda activate gen3-augur
 ```
+
+## Gen3 Client installation
+Download the latest MacOS X or Linux version of the gen3-client [here](https://github.com/uc-cdis/cdis-data-client/releases/tag/2020.05)
