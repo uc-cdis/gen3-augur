@@ -5,6 +5,7 @@ setup(
     author = "Yilin Xu",
     author_email = "yilinxu@uchicago.edu",
     version = 0.1, 
+    url = "https://github.com/yilinxu/gen3-augur"
     description = "Utility tools for data accessing from gen3 and data processing with augur",
     license = "Apache 2.0",
     packages = find_packages(),
@@ -12,5 +13,5 @@ setup(
     entry_points= ''' 
         [console_scripts]
         gen3-augur=gen3-augur.__main__:main
-    ''', 
+    '''
 )
