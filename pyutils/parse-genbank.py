@@ -52,13 +52,20 @@ def parse_bg(file):
     """
     gb_record = SeqIO.read(open(file, 'r'), 'genbank')
     output_handle = open(args.fasta, "a")
-    strain = gb_record.features[0].qualifiers['isolate'][0]
+    try:
+        strain = gb_record.features[0].qualifiers['isolate'][0]
+    except:
+        strain = gb_record.annotations['source']
     output_handle.write(">%s\n%s\n" % (
         strain,
         gb_record.seq
     ))
     metadata = {key: value[0] for key, value in gb_record.features[0].qualifiers.items() if key != "resource"}
     metadata['strain'] = strain
+    try:
+        metadata['country'] = metadata['country'].split(':')[0]
+    except:
+        pass
     metadata['file'] = path.basename(file)
     metadata['accession'] = gb_record.name
     return (metadata)
@@ -75,7 +82,7 @@ def main():
     metadata = list(map(parse_bg, files))
     metadata_df = pd.DataFrame(metadata)
     manifest = parse_manifest(args.manifest)
-    merge_manifest = metadata_df.merge(manifest, how='left', left_on='file', right_on='file_name')
+    merge_manifest = metadata_df.merge(manifest, how='inner', left_on='file', right_on='file_name')
     merge_manifest.to_csv(args.metadata, index=False)
 
 
