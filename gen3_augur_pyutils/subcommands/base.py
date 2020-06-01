@@ -23,30 +23,30 @@ class Subcommand(metaclass=ABCMeta):
         """
 
 
-@classmethod
-def __get_description__(cls):
-    """
-    Optionally returns description
-    """
-    return None
+    @classmethod
+    def __get_description__(cls):
+        """
+        Optionally returns description
+        """
+        return None
 
 
-@classmethod
-def __tool_name__(cls):
-    """
-    Tool name to use for the subparser
-    """
-    return cls.__name__
+    @classmethod
+    def __tool_name__(cls):
+        """
+        Tool name to use for the subparser
+        """
+        return cls.__name__
 
 
-@classmethod
-def add(cls, subparsers: ArgParserT) -> ArgParserT:
-    """
-    Add the given subcommand to the subparsers
-    """
-    subparser = subparsers.add_parser(
-        name=cls.__tool_name__(), description=cls.__get_description__()
-    )
-    cls.__add_arguments__(subparser)
-    subparser.set_defaults(func=cls.main)
-    return subparser
+    @classmethod
+    def add(cls, subparsers: ArgParserT) -> ArgParserT:
+        """
+        Add the given subcommand to the subparsers
+        """
+        subparser = subparsers.add_parser(
+            name=cls.__tool_name__(), description=cls.__get_description__()
+        )
+        cls.__add_arguments__(subparser)
+        subparser.set_defaults(func=cls.main)
+        return subparser
