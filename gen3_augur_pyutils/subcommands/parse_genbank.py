@@ -5,82 +5,64 @@ Extract patient metadata, viral metadata and viral sequence from GenBank .gb fil
 """
 from Bio import SeqIO
 from os import walk, path
-import argparse
 import pandas as pd
+from typing import Tuple, List
 import json
 
 from gen3_augur_pyutils.common.logger import Logger
-from gen3_augur_pyutils.common.types import ArgParserT, NamespaceT, LoggerT
+from gen3_augur_pyutils.common.io import IO
+from gen3_augur_pyutils.common.types import ArgParserT, NamespaceT, DataFrameT, LoggerT
 from gen3_augur_pyutils.subcommands import Subcommand
 
 
-class ParseGenbank(Subcommand):
+class ParseGenBank(Subcommand):
     @classmethod
-    def __add_arguments__(cls,parser:ArgParserT):
+    def __add_arguments__(cls, parser: ArgParserT):
         """
         Add the arguments to the parser
         :param parser: parsed arguments
         :return: None
         """
         parser.add_argument('--rawfolder', required=True, help='path of the folder having raw genbank sequence files')
-        parser.add_argument('--manifest', required=True, help='path of manifest file having attributes describing files')
+        parser.add_argument('--manifest', required=True,
+                            help='path of manifest file having object data describing files')
         parser.add_argument('--fasta', required=True, help='path of output fasta file')
         parser.add_argument('--metadata', required=True, help='path of output metadata file')
+        parser.add_argument('--logfile', required=True, help='path of the log file')
 
     @classmethod
-    def  main(cls):
-
-
-    def parse_args():
+    def main(cls, options: NamespaceT) -> None:
         """
-        Parse arguments
-        :return: parsed arguments
-        """
-        global args
-        parser = argparse.ArgumentParser(
-            description='Crate metadata.tsv and sequence.fasta from raw files in genbank format')
-        parser.add_argument('--rawfolder', required=True, help='path of the folder having raw genbank sequence files')
-        parser.add_argument('--manifest', required=True, help='path of manifest file having attributes describing files')
-        parser.add_argument('--fasta', required=True, help='path of output fasta file')
-        parser.add_argument('--metadata', required=True, help='path of output metadata file')
-        args = parser.parse_args()
-        return args
-
-
-    def gather_files(folder):
-        """
-        List files in a folder
-        :param folder:
-        :return: files in the folder
-        """
-        for (dirpath, dirnames, filenames) in walk(folder):
-            for item in filenames:
-                yield path.join(dirpath, item)
-
-
-    def parse_manifest(file):
-        """
-        Extract GUID, file name, file size and md5sum
-        :param file:
+        Entrypoint for ParseGeneBank
+        :param options:
         :return:
         """
-        with open(file, 'r') as fh:
-            manifest = json.load(fh)
-            manifest_df = pd.DataFrame(manifest)
-            return manifest_df
+        logger = Logger.get_logger(cls.__tool_name__(), options.logfile)
+        logger.info(cls.__get_description__())
 
+        # Parse Manifest file
+        manifest = IO.parse_json(options.manifest)
+        logger.info("Parse Manifest file %s", options.manifest)
 
-    def parse_bg(file):
+        # Get GenBank file paths
+        paths = IO.gather_file(options.rawfoler)
+
+        # Parse GenBank files
+
+    @classmethod
+    def parse_bg(cls, gbfile: str, logger: LoggerT) -> Tuple[DataFrameT, List]:
         """
         Extract metadata and save sequence in fasta format with strain as header
         :param file: genbank file path
         :return: metadata dict
         """
-        gb_record = SeqIO.read(open(file, 'r'), 'genbank')
-        output_handle = open(args.fasta, "a")
+        gb_record = SeqIO.read(open(gbfile, 'r'), 'genbank')
+        output_handle = open(fasta, "a")
         try:
             strain = gb_record.features[0].qualifiers['isolate'][0]
-        except:
+        except KeyError:
+            logger.error("%s doesn't have isolate information, use source to code strain", gbfile)
+        else:
             strain = gb_record.annotations['source']
         output_handle.write(">%s\n%s\n" % (
             strain,
