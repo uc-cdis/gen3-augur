@@ -18,7 +18,7 @@ class IO(object):
                 yield path.join(dirpath, item)
 
     @classmethod
-    def parse_json(self, file: str) -> DataFrameT:
+    def parse_json(cls, file: str) -> DataFrameT:
         """
         Extract key value pairs in json file
         :param file: file path
