@@ -1,3 +1,7 @@
+"""IO common utilities
+@author: Yilin Xu <yilinxu@uchicago.edu>
+"""
+
 import json
 from os import walk, path
 
