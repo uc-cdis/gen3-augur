@@ -29,12 +29,17 @@ class Logger(object):
     LoggerLevel = logging.INFO
 
     @classmethod
-    def get_logger(cls, name, stream=None):
-        """Gets a logger with the given name.  If a ``stream`` is not
+    def get_logger(cls, name, file, stream=None):
+        """Gets a logger with the given name and file path.  If a ``stream`` is not
         provided, the logger will be a child of the root logger, otherwise, a
         new logger is created using the given ``stream``."""
         if not stream:
             logger = Logger.RootLogger.getChild(name)
+            file_handler = logging.FileHandler(file)
+            file_handler.setLevel(logging.INFO)
+            formatter = logging.Formatter(Logger.LoggerFormat, datefmt="%Y%m%d %H:%M:%S")
+            file_handler.setFormatter(formatter)
+            logger.addHandler(file_handler)
         else:
             logger = logging.getLogger(name)
             handler = logging.StreamHandler(stream)
