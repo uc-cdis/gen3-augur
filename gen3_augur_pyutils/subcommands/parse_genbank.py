@@ -75,26 +75,26 @@ class ParseGenbank(Subcommand):
         Extract metadata and save sequence in fasta format with strain as header
         :param file: genbank file path
         :return: metadata dict
-    """
-    gb_record = SeqIO.read(open(file, 'r'), 'genbank')
-    output_handle = open(args.fasta, "a")
-    try:
-        strain = gb_record.features[0].qualifiers['isolate'][0]
-    except:
-        strain = gb_record.annotations['source']
-    output_handle.write(">%s\n%s\n" % (
-        strain,
-        gb_record.seq
-    ))
-    metadata = {key: value[0] for key, value in gb_record.features[0].qualifiers.items() if key != "resource"}
-    metadata['strain'] = strain
-    try:
-        metadata['country'] = metadata['country'].split(':')[0]
-    except:
-        pass
-    metadata['file'] = path.basename(file)
-    metadata['accession'] = gb_record.name
-    return (metadata)
+        """
+        gb_record = SeqIO.read(open(file, 'r'), 'genbank')
+        output_handle = open(args.fasta, "a")
+        try:
+            strain = gb_record.features[0].qualifiers['isolate'][0]
+        except:
+            strain = gb_record.annotations['source']
+        output_handle.write(">%s\n%s\n" % (
+            strain,
+            gb_record.seq
+        ))
+        metadata = {key: value[0] for key, value in gb_record.features[0].qualifiers.items() if key != "resource"}
+        metadata['strain'] = strain
+        try:
+            metadata['country'] = metadata['country'].split(':')[0]
+        except:
+            pass
+        metadata['file'] = path.basename(file)
+        metadata['accession'] = gb_record.name
+        return (metadata)
 
 
 def main():

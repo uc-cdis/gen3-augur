@@ -4,25 +4,20 @@ Module for parsing genbank metadata
 """
 import json
 from os import walk, path
+import pandas as pd
 from gen3_augur_pyutils.common.logger import Logger
+from gen3_augur_pyutils.common.types import DataFrameT
 
 
 class GenBankParser(object):
     """
-    Parse genbank format sequencing file, extract metadata save in csv format and fasta file into multi fasta file
+    Parse genbank format sequencing file, extract metadata save in csv format and fasta file as multi fasta file
     """
 
-    def __init__(self):
-        self.logger = Logger.get_logger('GenBankParser')
+    def __init__(self, logfile: str) -> None:
 
-    def gather_file(self, dir: str) -> None:
-        """
-        List files in a directory
-        :param dir: path of the directory
-        :return: files under the directory
-        """
-        for (dirpath, dirnames, filenames) in walk(dir):
-            for item in filenames:
-                yield path.join(dirpath, item)
+        self.logger = Logger.get_logger(logfile)
 
-    def
+
+
+
