@@ -18,7 +18,7 @@ from gen3_augur_pyutils.subcommands import Subcommand
 
 class ParseGenBank(Subcommand):
     @classmethod
-    def __add_arguments__(cls, parser: ArgParserT):
+    def __add_arguments__(cls, parser: ArgParserT) -> None:
         """
         Add the arguments to the parser
         :param parser: parsed arguments
