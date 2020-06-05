@@ -4,6 +4,7 @@
 
 import json
 from os import walk, path
+from typing import List
 
 
 class IO(object):
@@ -29,3 +30,15 @@ class IO(object):
         fh.close()
         items_df = pd.DataFrame(items)
         return items_df
+
+    @classmethod
+    def write_file(cls, file: str, content: List) -> None:
+        """
+        Write content into a file
+        :param file: output file path
+        :param content:
+        :return:
+        """
+        fh = open(file, 'r')
+        fh.writelines('%s' % item for item in content)
+        fh.close()
