@@ -5,6 +5,7 @@ work (https://github.com/COV-IRT/dmwg-data-pyutils/).
 
 import logging
 import sys
+from gen3_augur_pyutils.common.types import LoggerT
 
 
 class Logger(object):
@@ -15,7 +16,7 @@ class Logger(object):
     LoggerFormat = "[%(levelname)s] [%(asctime)s] [%(name)s] - %(message)s"
 
     @classmethod
-    def setup_root_logger(cls):
+    def setup_root_logger(cls) -> None:
         """Sets up the root logger and should only be called once."""
         for handle in Logger.RootLogger.handlers:
             Logger.RootLogger.removeHandler(handle)
@@ -29,7 +30,7 @@ class Logger(object):
     LoggerLevel = logging.INFO
 
     @classmethod
-    def get_logger(cls, name, file, stream=None):
+    def get_logger(cls, name, file, stream=None) -> LoggerT:
         """Gets a logger with the given name and file path.  If a ``stream`` is not
         provided, the logger will be a child of the root logger, otherwise, a
         new logger is created using the given ``stream``."""
