@@ -6,12 +6,13 @@ Extract patient metadata, viral metadata and viral sequence from GenBank .gb fil
 from Bio import SeqIO
 from os import walk, path
 import pandas as pd
-from typing import Tuple, List
+from typing import Tuple, Dict
+from itertools import repeat
 import json
 
 from gen3_augur_pyutils.common.logger import Logger
 from gen3_augur_pyutils.common.io import IO
-from gen3_augur_pyutils.common.types import ArgParserT, NamespaceT, DataFrameT, LoggerT
+from gen3_augur_pyutils.common.types import ArgParserT, NamespaceT, LoggerT
 from gen3_augur_pyutils.subcommands import Subcommand
 
 
@@ -48,51 +49,43 @@ class ParseGenBank(Subcommand):
         paths = IO.gather_file(options.rawfoler)
 
         # Parse GenBank files
+        res_list = list(map(parse_bg, paths, repeat(logger)))
+        metadata = [x[0] for x in res_list]
+        seq = [x[1] for x in res_list]
+        metadata_df = pd.DataFrame(metadata)
+
+        # Write sequence into a multifastq file
+        IO.write_file(options.fasta, seq)
+
+        # Merge Manifest and Metadata
+        assert metadata_df.shape[0] == manifest.shape[0], "GenBank and Manifest are unequal"
+        merge_manifest = metadata_df.merge(manifest, how='inner', left_on='file', right_on='file_name')
+
+        # Write merge dataframe
+        merge_manifest.to_csv(options.metadata, index=False)
+
 
     @classmethod
-    def parse_bg(cls, gbfile: str, logger: LoggerT) -> Tuple[DataFrameT, List]:
+    def parse_bg(cls, gbfile: str, logger: LoggerT) -> Tuple[Dict[str, str], str]:
         """
         Extract metadata and save sequence in fasta format with strain as header
         :param file: genbank file path
-        :return: metadata dict
+        :return: metadata dict and seq string
         """
         gb_record = SeqIO.read(open(gbfile, 'r'), 'genbank')
-        output_handle = open(fasta, "a")
         try:
             strain = gb_record.features[0].qualifiers['isolate'][0]
         except KeyError:
             logger.error("%s doesn't have isolate information, use source to code strain", gbfile)
         else:
             strain = gb_record.annotations['source']
-        output_handle.write(">%s\n%s\n" % (
-            strain,
-            gb_record.seq
-        ))
+        seq = strain + "\n" + gb_record.seq + "\n"
         metadata = {key: value[0] for key, value in gb_record.features[0].qualifiers.items() if key != "resource"}
         metadata['strain'] = strain
         try:
             metadata['country'] = metadata['country'].split(':')[0]
-        except:
-            pass
-        metadata['file'] = path.basename(file)
+        except KeyError:
+            logger.error("%s location information at country level only", gbfile)
+        metadata['file'] = path.basename(gbfile)
         metadata['accession'] = gb_record.name
-        return (metadata)
-
-
-def main():
-    """
-    Parse input parameters to prepare metadata for running Augur
-    :param args:
-    :return:
-    """
-    parse_args()
-    files = gather_files(args.rawfolder)
-    metadata = list(map(parse_bg, files))
-    metadata_df = pd.DataFrame(metadata)
-    manifest = parse_manifest(args.manifest)
-    merge_manifest = metadata_df.merge(manifest, how='inner', left_on='file', right_on='file_name')
-    merge_manifest.to_csv(args.metadata, index=False)
-
-
-if __name__ == "__main__":
-    main()
+        return (metadata, seq)
