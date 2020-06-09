@@ -1,4 +1,4 @@
-from __future_import absolute absolute_import
+from __future__ import absolute_import
 
 from .base import Subcommand
-from .parse_genbank import ParseGenbank
+from .parse_genbank import ParseGenBank

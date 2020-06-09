@@ -5,7 +5,8 @@
 import json
 from os import walk, path
 from typing import List
-
+from gen3_augur_pyutils.common.types import DataFrameT
+import pandas as pd
 
 class IO(object):
     @classmethod
@@ -39,6 +40,6 @@ class IO(object):
         :param content:
         :return:
         """
-        fh = open(file, 'r')
+        fh = open(file, 'w')
         fh.writelines('%s' % item for item in content)
         fh.close()

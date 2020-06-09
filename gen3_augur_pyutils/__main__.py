@@ -7,7 +7,7 @@ import datetime
 import sys
 
 from gen3_augur_pyutils.common.logger import Logger
-from gen3_augur_pyutils.subcommands import ParseGenbank
+from gen3_augur_pyutils.subcommands import ParseGenBank
 
 
 def main(args=None, extra_subparser=None):
@@ -20,14 +20,12 @@ def main(args=None, extra_subparser=None):
     # Setup logger
     Logger.setup_root_logger()
 
-    logger = Logger.get_logger('main')
-
     # Get args
     p = argparse.ArgumentParser('Gen3 Augur Utils')
-    subparsers = p.add_subparsers(dest='subcommad')
+    subparsers = p.add_subparsers(dest='subcommand')
     subparsers.required = True
 
-    ParseGenbank.add(subparsers=subparsers)
+    ParseGenBank.add(subparsers=subparsers)
     if extra_subparser:
         extra_subparser.add(subparsers=subparsers)
 
