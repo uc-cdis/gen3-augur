@@ -75,10 +75,10 @@ class ParseGenBank(Subcommand):
 
         # Parse GenBank files
         res_list = list(map(cls.parse_bg, paths, repeat(logger)))
-        paths = IO.gather_file(options.rawfoler)
+        paths = IO.gather_file(options.rawfolder)
 
         # Parse GenBank files
-        res_list = list(map(parse_bg, paths, repeat(logger)))
+        res_list = list(map(cls.parse_bg, paths, repeat(logger)))
         metadata = [x[0] for x in res_list]
         seq = [x[1] for x in res_list]
         metadata_df = pd.DataFrame(metadata)

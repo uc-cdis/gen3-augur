@@ -24,7 +24,7 @@ def main(args=None, extra_subparser=None):
     subparsers = p.add_subparsers(dest='subcommad')
     subparsers.required = True
 
-    ParseGenbank.add(subparsers=subparsers)
+    ParseGenBank.add(subparsers=subparsers)
     if extra_subparser:
         extra_subparser.add(subparsers=subparsers)
 
