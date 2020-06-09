@@ -45,10 +45,11 @@ class ParseGenBank(Subcommand):
             strain = gb_record.features[0].qualifiers['strain'][0]
         except KeyError:
             logger.error("%s doesn't have strain information, use isolate to code strain", gbfile)
-            strain = gb_record.features[0].qualifiers['isolate'][0]
-        finally:
-            logger.error("%s doesn't have strain information, use source to code strain", gbfile)
-            strain = gb_record.annotations['source']
+            try:
+                strain = gb_record.features[0].qualifiers['isolate'][0]
+            except KeyError:
+                logger.error("%s doesn't have strain information, use source to code strain", gbfile)
+                strain = gb_record.annotations['source']
         strain = re.sub(' ', '/', strain)
         seq = '>' + strain + "\n" + gb_record.seq + "\n"
         metadata = {key: value[0] for key, value in gb_record.features[0].qualifiers.items() if key != "resource"}
