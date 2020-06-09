@@ -10,6 +10,7 @@ from typing import Tuple, Dict
 from itertools import repeat
 import pandas as pd
 import json
+import re
 
 from gen3_augur_pyutils.common.logger import Logger
 from gen3_augur_pyutils.common.io import IO
@@ -45,6 +46,7 @@ class ParseGenBank(Subcommand):
         except KeyError:
             logger.error("%s doesn't have isolate information, use source to code strain", gbfile)
             strain = gb_record.annotations['source']
+        strain = re.sub(' ', '/', strain)
         seq = '>' + strain + "\n" + gb_record.seq + "\n"
         metadata = {key: value[0] for key, value in gb_record.features[0].qualifiers.items() if key != "resource"}
         metadata['strain'] = strain
