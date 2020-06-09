@@ -46,7 +46,7 @@ class ParseGenBank(Subcommand):
         except KeyError:
             logger.error("%s doesn't have strain information, use isolate to code strain", gbfile)
             strain = gb_record.features[0].qualifiers['isolate'][0]
-        except KeyError:
+        finally:
             logger.error("%s doesn't have strain information, use source to code strain", gbfile)
             strain = gb_record.annotations['source']
         strain = re.sub(' ', '/', strain)
