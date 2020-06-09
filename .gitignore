@@ -1,5 +1,5 @@
-/gen3/*credential*
-/data/test-genbank-rawbg
-/data/genbank-rawbg-0609
+gen3/*credential*
+data/test-genbank-rawbg
+data/genbank-rawbg-0609
 .idea
-/data/test.txt
+data/test.txt
