@@ -1,5 +1,6 @@
 gen3/*credential*
 data/test-genbank-rawbg
 data/genbank-rawbg-0609
+*.bg
 .idea
 data/test.txt
