@@ -9,7 +9,6 @@ import sys
 from gen3_augur_pyutils.common.logger import Logger
 from gen3_augur_pyutils.subcommands import ParseGenBank
 
-
 def main(args=None, extra_subparser=None):
     """
     The main method for gen3-augur-pyutils.
@@ -22,10 +21,10 @@ def main(args=None, extra_subparser=None):
 
     # Get args
     p = argparse.ArgumentParser('Gen3 Augur Utils')
-    subparsers = p.add_subparsers(dest='subcommand')
+    subparsers = p.add_subparsers(dest='subcommad')
     subparsers.required = True
 
-    ParseGenBank.add(subparsers=subparsers)
+    ParseGenbank.add(subparsers=subparsers)
     if extra_subparser:
         extra_subparser.add(subparsers=subparsers)
 

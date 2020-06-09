@@ -75,17 +75,20 @@ class ParseGenBank(Subcommand):
 
         # Parse GenBank files
         res_list = list(map(cls.parse_bg, paths, repeat(logger)))
+        paths = IO.gather_file(options.rawfoler)
+
+        # Parse GenBank files
+        res_list = list(map(parse_bg, paths, repeat(logger)))
         metadata = [x[0] for x in res_list]
         seq = [x[1] for x in res_list]
         metadata_df = pd.DataFrame(metadata)
 
         # Write sequence into a multifastq file
         IO.write_file(options.fasta, seq)
+
         # Merge Manifest and Metadata
         assert metadata_df.shape[0] == manifest.shape[0], "GenBank and Manifest are unequal"
         merge_manifest = metadata_df.merge(manifest, how='inner', left_on='file', right_on='file_name')
 
         # Write merge dataframe
         merge_manifest.to_csv(options.metadata, index=False)
-
-
