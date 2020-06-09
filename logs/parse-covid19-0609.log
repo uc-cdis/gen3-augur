@@ -1,0 +1,227 @@
+[INFO] [20200609 13:37:15] [gen3_augur_pyutils.ParseGenBank] - None
+[INFO] [20200609 13:37:15] [gen3_augur_pyutils.ParseGenBank] - Parse Manifest file data/covid19-0609-manifest.json
+[ERROR] [20200609 13:37:15] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY350750.gb location information at country level only
+[ERROR] [20200609 13:37:16] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY613950.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:16] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY394994.gb location information at country level only
+[ERROR] [20200609 13:37:16] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/LC528232.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:16] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/LC528232.gb location information at country level only
+[ERROR] [20200609 13:37:16] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY395001.gb location information at country level only
+[ERROR] [20200609 13:37:17] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY463060.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:17] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY463060.gb location information at country level only
+[ERROR] [20200609 13:37:17] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/LR757998.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:19] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY559089.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:19] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY394984.gb location information at country level only
+[ERROR] [20200609 13:37:20] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY394977.gb location information at country level only
+[ERROR] [20200609 13:37:20] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/DJ045279.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:20] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/DJ045279.gb location information at country level only
+[ERROR] [20200609 13:37:20] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY310120.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:20] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY310120.gb location information at country level only
+[ERROR] [20200609 13:37:21] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY394990.gb location information at country level only
+[ERROR] [20200609 13:37:21] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY345986.gb location information at country level only
+[ERROR] [20200609 13:37:22] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY279354.gb location information at country level only
+[ERROR] [20200609 13:37:22] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AH013709.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:23] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/DQ412042.gb location information at country level only
+[ERROR] [20200609 13:37:23] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY394980.gb location information at country level only
+[ERROR] [20200609 13:37:23] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AP006557.gb location information at country level only
+[ERROR] [20200609 13:37:24] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY485277.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:24] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY485277.gb location information at country level only
+[ERROR] [20200609 13:37:24] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/DQ084200.gb location information at country level only
+[ERROR] [20200609 13:37:24] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/MT308984.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:24] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/MT308984.gb location information at country level only
+[ERROR] [20200609 13:37:24] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/HW269828.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:24] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/HW269828.gb location information at country level only
+[ERROR] [20200609 13:37:25] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY357075.gb location information at country level only
+[ERROR] [20200609 13:37:25] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY394991.gb location information at country level only
+[ERROR] [20200609 13:37:25] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY345987.gb location information at country level only
+[ERROR] [20200609 13:37:25] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY395004.gb location information at country level only
+[ERROR] [20200609 13:37:26] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AH013708.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:26] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AB257344.gb location information at country level only
+[ERROR] [20200609 13:37:26] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/HI553383.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:26] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/HI553383.gb location information at country level only
+[ERROR] [20200609 13:37:26] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/DQ412043.gb location information at country level only
+[ERROR] [20200609 13:37:27] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY394981.gb location information at country level only
+[ERROR] [20200609 13:37:27] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/FJ882930.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:27] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/DL476508.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:27] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/DL476508.gb location information at country level only
+[ERROR] [20200609 13:37:28] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY394995.gb location information at country level only
+[ERROR] [20200609 13:37:28] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/LC528233.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:28] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/LC528233.gb location information at country level only
+[ERROR] [20200609 13:37:28] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/LC546038.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:28] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY395000.gb location information at country level only
+[ERROR] [20200609 13:37:30] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY559088.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:30] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY394985.gb location information at country level only
+[ERROR] [20200609 13:37:30] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY278487.gb location information at country level only
+[ERROR] [20200609 13:37:30] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/GQ153545.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:30] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/GQ153545.gb location information at country level only
+[ERROR] [20200609 13:37:31] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY559093.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:31] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY345988.gb location information at country level only
+[ERROR] [20200609 13:37:32] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/DQ022305.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:32] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY485278.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:32] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY485278.gb location information at country level only
+[ERROR] [20200609 13:37:32] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AP006559.gb location information at country level only
+[ERROR] [20200609 13:37:33] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY772062.gb location information at country level only
+[ERROR] [20200609 13:37:33] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY559083.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:33] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/LR757996.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:33] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/KY352407.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:33] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/FV537213.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:33] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/FV537213.gb location information at country level only
+[ERROR] [20200609 13:37:34] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY686863.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:34] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY686863.gb location information at country level only
+[ERROR] [20200609 13:37:34] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/GQ153541.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:34] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/GQ153541.gb location information at country level only
+[ERROR] [20200609 13:37:34] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY559097.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:35] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY427439.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:35] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY427439.gb location information at country level only
+[ERROR] [20200609 13:37:35] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY394979.gb location information at country level only
+[ERROR] [20200609 13:37:35] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY278488.gb location information at country level only
+[ERROR] [20200609 13:37:35] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/EU371561.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:35] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/EU371561.gb location information at country level only
+[ERROR] [20200609 13:37:35] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY559087.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:36] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/LC534419.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:36] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/DJ059765.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:36] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/DJ059765.gb location information at country level only
+[ERROR] [20200609 13:37:36] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/LR757997.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:37] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/DQ497008.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:37] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/DQ497008.gb location information at country level only
+[ERROR] [20200609 13:37:37] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/FV537212.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:37] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/FV537212.gb location information at country level only
+[ERROR] [20200609 13:37:37] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/GQ153540.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:37] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/GQ153540.gb location information at country level only
+[ERROR] [20200609 13:37:37] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY282752.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:37] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY282752.gb location information at country level only
+[ERROR] [20200609 13:37:37] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY559096.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:38] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY278489.gb location information at country level only
+[ERROR] [20200609 13:37:38] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY394978.gb location information at country level only
+[ERROR] [20200609 13:37:39] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/EU371560.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:39] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/EU371560.gb location information at country level only
+[ERROR] [20200609 13:37:39] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY559086.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:40] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY321118.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:40] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY321118.gb location information at country level only
+[ERROR] [20200609 13:37:40] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/CQ918598.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:40] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/CQ918598.gb location information at country level only
+[ERROR] [20200609 13:37:40] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/LC534418.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:40] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/CS460762.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:40] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/CS460762.gb location information at country level only
+[ERROR] [20200609 13:37:40] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/GQ153544.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:40] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/GQ153544.gb location information at country level only
+[ERROR] [20200609 13:37:41] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY559092.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:43] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AP006558.gb location information at country level only
+[ERROR] [20200609 13:37:43] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/EU371564.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:43] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/EU371564.gb location information at country level only
+[ERROR] [20200609 13:37:43] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY559082.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:44] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/FV537211.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:44] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/FV537211.gb location information at country level only
+[ERROR] [20200609 13:37:44] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY559095.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:44] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/GQ153543.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:44] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/GQ153543.gb location information at country level only
+[ERROR] [20200609 13:37:44] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/CS480537.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:44] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/CS480537.gb location information at country level only
+[ERROR] [20200609 13:37:45] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY394998.gb location information at country level only
+[ERROR] [20200609 13:37:45] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/EU371563.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:45] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/EU371563.gb location information at country level only
+[ERROR] [20200609 13:37:45] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY394988.gb location information at country level only
+[ERROR] [20200609 13:37:45] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/CS079029.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:45] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/CS079029.gb location information at country level only
+[ERROR] [20200609 13:37:46] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY559085.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:46] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY297028.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:46] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY297028.gb location information at country level only
+[ERROR] [20200609 13:37:46] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY559091.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:46] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/GQ153547.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:46] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/GQ153547.gb location information at country level only
+[ERROR] [20200609 13:37:47] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY351680.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:47] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY351680.gb location information at country level only
+[ERROR] [20200609 13:37:48] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY613948.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:49] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY559081.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:50] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY559090.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:50] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY686864.gb location information at country level only
+[ERROR] [20200609 13:37:50] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/GQ153546.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:50] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/GQ153546.gb location information at country level only
+[ERROR] [20200609 13:37:50] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY508724.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:50] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY508724.gb location information at country level only
+[ERROR] [20200609 13:37:50] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY291451.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:51] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY613949.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:52] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/DQ898174.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:53] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/FV537210.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:53] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/FV537210.gb location information at country level only
+[ERROR] [20200609 13:37:53] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY463059.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:53] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY463059.gb location information at country level only
+[ERROR] [20200609 13:37:53] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/LR757995.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:54] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY559094.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:54] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/GQ153542.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:54] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/GQ153542.gb location information at country level only
+[ERROR] [20200609 13:37:54] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/DQ084199.gb location information at country level only
+[ERROR] [20200609 13:37:55] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/DJ066921.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:55] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/DJ066921.gb location information at country level only
+[ERROR] [20200609 13:37:55] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/MT318827.gb location information at country level only
+[ERROR] [20200609 13:37:55] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY394999.gb location information at country level only
+[ERROR] [20200609 13:37:55] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY394989.gb location information at country level only
+[ERROR] [20200609 13:37:55] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/EU371562.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:55] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/EU371562.gb location information at country level only
+[ERROR] [20200609 13:37:55] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/FJ882938.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:55] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/CS079028.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:55] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/CS079028.gb location information at country level only
+[ERROR] [20200609 13:37:56] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/DL008527.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:56] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/DL008527.gb location information at country level only
+[ERROR] [20200609 13:37:56] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY559084.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:57] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY654624.gb location information at country level only
+[ERROR] [20200609 13:37:57] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY338174.gb location information at country level only
+[ERROR] [20200609 13:37:57] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY394992.gb location information at country level only
+[ERROR] [20200609 13:37:57] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY278490.gb location information at country level only
+[ERROR] [20200609 13:37:57] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY357076.gb location information at country level only
+[ERROR] [20200609 13:37:58] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/CS254197.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:58] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/CS254197.gb location information at country level only
+[ERROR] [20200609 13:37:58] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/DQ648856.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:37:58] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/DQ648856.gb location information at country level only
+[ERROR] [20200609 13:38:00] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY394982.gb location information at country level only
+[ERROR] [20200609 13:38:00] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/DQ640652.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:38:00] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AP006561.gb location information at country level only
+[ERROR] [20200609 13:38:00] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY394996.gb location information at country level only
+[ERROR] [20200609 13:38:00] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/HW375992.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:38:00] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/HW375992.gb location information at country level only
+[ERROR] [20200609 13:38:01] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/CQ918585.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:38:01] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/CQ918585.gb location information at country level only
+[ERROR] [20200609 13:38:01] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY395003.gb location information at country level only
+[ERROR] [20200609 13:38:03] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY362699.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:38:03] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY362699.gb location information at country level only
+[ERROR] [20200609 13:38:03] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY595412.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:38:03] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY595412.gb location information at country level only
+[ERROR] [20200609 13:38:03] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY394850.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:38:03] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY394850.gb location information at country level only
+[ERROR] [20200609 13:38:03] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/EU371559.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:38:03] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/EU371559.gb location information at country level only
+[ERROR] [20200609 13:38:03] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/CS079027.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:38:03] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/CS079027.gb location information at country level only
+[ERROR] [20200609 13:38:04] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY394986.gb location information at country level only
+[ERROR] [20200609 13:38:04] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY394997.gb location information at country level only
+[ERROR] [20200609 13:38:04] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY291315.gb location information at country level only
+[ERROR] [20200609 13:38:04] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/FJ882926.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:38:04] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/FJ882943.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:38:04] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/CQ918584.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:38:04] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/CQ918584.gb location information at country level only
+[ERROR] [20200609 13:38:05] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY395002.gb location information at country level only
+[ERROR] [20200609 13:38:05] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/GQ153539.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:38:05] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/GQ153539.gb location information at country level only
+[ERROR] [20200609 13:38:06] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY362698.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:38:06] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY362698.gb location information at country level only
+[ERROR] [20200609 13:38:06] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/CS079026.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:38:06] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/CS079026.gb location information at country level only
+[ERROR] [20200609 13:38:06] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/CS569493.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:38:06] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/CS569493.gb location information at country level only
+[ERROR] [20200609 13:38:07] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY394987.gb location information at country level only
+[ERROR] [20200609 13:38:07] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY338175.gb location information at country level only
+[ERROR] [20200609 13:38:07] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY714217.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:38:07] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY394993.gb location information at country level only
+[ERROR] [20200609 13:38:07] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY278491.gb location information at country level only
+[ERROR] [20200609 13:38:08] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY864806.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:38:08] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY864806.gb location information at country level only
+[ERROR] [20200609 13:38:08] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/DQ648857.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:38:08] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/DQ648857.gb location information at country level only
+[ERROR] [20200609 13:38:08] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/GQ153548.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:38:08] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/GQ153548.gb location information at country level only
+[ERROR] [20200609 13:38:09] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY278741.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:38:09] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY278741.gb location information at country level only
+[ERROR] [20200609 13:38:09] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/FJ882963.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:38:10] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY394983.gb location information at country level only
+[ERROR] [20200609 13:38:10] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AY613947.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:38:10] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/FJ882957.gb doesn't have isolate information, use source to code strain
+[ERROR] [20200609 13:38:10] [gen3_augur_pyutils.ParseGenBank] - data/genbank-rawbg-0609/AP006560.gb location information at country level only
