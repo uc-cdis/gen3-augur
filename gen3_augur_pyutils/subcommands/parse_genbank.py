@@ -42,10 +42,10 @@ class ParseGenBank(Subcommand):
         """
         gb_record = SeqIO.read(open(gbfile, 'r'), 'genbank')
         try:
-            strain = gb_record.features[0].qualifiers['isolate'][0]
+            strain = gb_record.features[0].qualifiers['strain'][0]
         except KeyError:
-            logger.error("%s doesn't have isolate information, use source to code strain", gbfile)
-            strain = gb_record.annotations['source']
+            logger.error("%s doesn't have strain information, use isolate to code strain", gbfile)
+            strain = gb_record.features[0].qualifiers['isolate'][0]
         strain = re.sub(' ', '/', strain)
         seq = '>' + strain + "\n" + gb_record.seq + "\n"
         metadata = {key: value[0] for key, value in gb_record.features[0].qualifiers.items() if key != "resource"}
