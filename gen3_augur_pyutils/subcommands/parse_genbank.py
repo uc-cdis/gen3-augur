@@ -41,6 +41,15 @@ class ParseGenBank(Subcommand):
         :return: metadata dict and seq string
         """
         gb_record = SeqIO.read(open(gbfile, 'r'), 'genbank')
+        metadata = {key: value[0] for key, value in gb_record.features[0].qualifiers.items() if key != "resource"}
+        if metadata['organism'] != 'Severe acute respiratory syndrome coronavirus 2':
+            logger.info('%s is not Covid19 sample, remove the file', gbfile)
+            return None
+        try:
+            metadata['country'] = metadata['country'].split(':')[0]
+        except KeyError:
+            logger.error("No location information, remove %s", gbfile)
+            return None
         try:
             strain = gb_record.features[0].qualifiers['strain'][0]
         except KeyError:
@@ -52,12 +61,7 @@ class ParseGenBank(Subcommand):
                 strain = gb_record.annotations['source']
         strain = re.sub(' ', '/', strain)
         seq = '>' + strain + "\n" + gb_record.seq + "\n"
-        metadata = {key: value[0] for key, value in gb_record.features[0].qualifiers.items() if key != "resource"}
         metadata['strain'] = strain
-        try:
-            metadata['country'] = metadata['country'].split(':')[0]
-        except KeyError:
-            logger.error("%s location information at country level only", gbfile)
         metadata['file'] = path.basename(gbfile)
         metadata['accession'] = gb_record.name
         return (metadata, seq)
@@ -85,15 +89,14 @@ class ParseGenBank(Subcommand):
 
         # Parse GenBank files
         res_list = list(map(cls.parse_bg, paths, repeat(logger)))
-        metadata = [x[0] for x in res_list]
-        seq = [x[1] for x in res_list]
+        metadata = [x[0] for x in res_list if x is not None]
+        seq = [x[1] for x in res_list if x is not None]
         metadata_df = pd.DataFrame(metadata)
 
         # Write sequence into a multifastq file
         IO.write_file(options.fasta, seq)
 
         # Merge Manifest and Metadata
-        assert metadata_df.shape[0] == manifest.shape[0], "GenBank and Manifest are unequal"
         merge_manifest = metadata_df.merge(manifest, how='inner', left_on='file', right_on='file_name')
 
         # Write merge dataframe
