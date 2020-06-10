@@ -41,14 +41,15 @@ class ParseGenBank(Subcommand):
         :return: metadata dict and seq string
         """
         gb_record = SeqIO.read(open(gbfile, 'r'), 'genbank')
+        bf = path.basename(gbfile)
         metadata = {key: value[0] for key, value in gb_record.features[0].qualifiers.items() if key != "resource"}
         if metadata['organism'] != 'Severe acute respiratory syndrome coronavirus 2':
-            logger.info('%s is not Covid19 sample, remove the file', gbfile)
+            logger.info('%s is not Covid19 sample, remove the file', bf)
             return None
         try:
             metadata['country'] = metadata['country'].split(':')[0]
         except KeyError:
-            logger.error("No location information, remove %s", gbfile)
+            logger.error("No location information, remove %s", bf)
             return None
         try:
             strain = gb_record.features[0].qualifiers['strain'][0]
@@ -58,9 +59,10 @@ class ParseGenBank(Subcommand):
             except KeyError:
                 strain = gb_record.annotations['source']
         strain = re.sub(' ', '/', strain)
+        strain = strain + "-" + bf
         seq = '>' + strain + "\n" + gb_record.seq + "\n"
         metadata['strain'] = strain
-        metadata['file'] = path.basename(gbfile)
+        metadata['file'] = bf
         metadata['accession'] = gb_record.name
         return (metadata, seq)
 
