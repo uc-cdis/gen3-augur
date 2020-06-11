@@ -92,6 +92,7 @@ class ParseGenBank(Subcommand):
         metadata = [x[0] for x in res_list if x is not None]
         seq = [x[1] for x in res_list if x is not None]
         metadata_df = pd.DataFrame(metadata)
+        metadata_df.rename(columns={'collection_date': 'date'}, inplace=True)
 
         # Write sequence into a multifastq file
         IO.write_file(options.fasta, seq)
