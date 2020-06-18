@@ -1,0 +1,582 @@
+{
+  "alignment": "aligned.fasta",
+  "clock": {
+    "intercept": -2.3900884944793104,
+    "rate": 0.0011832347871619236,
+    "rtt_Tmrca": 2019.9613131829187
+  },
+  "generated_by": {
+    "program": "augur",
+    "version": "8.0.0"
+  },
+  "input_tree": "tree_raw.nwk",
+  "nodes": {
+    "FDAARGOS_983-MT233526.gb": {
+      "branch_length": 0.0,
+      "clock_length": 0.0,
+      "date": "2020-01-19",
+      "mutation_length": 7.45552371795569e-18,
+      "num_date_confidence": [
+        2020.0505464480875,
+        2020.0505464480875
+      ],
+      "numdate": 2020.0505464480875,
+      "raw_date": "2020-01-19"
+    },
+    "NODE_0000000": {
+      "branch_length": 0.001,
+      "clock_length": 0.001,
+      "date": "2019-12-19",
+      "mutation_length": 0.001,
+      "num_date_confidence": [
+        2016.8288400937472,
+        2020.0226473846733
+      ],
+      "numdate": 2019.9654965460547
+    },
+    "NODE_0000003": {
+      "branch_length": 4.289926362386178e-05,
+      "clock_length": 4.289926362386178e-05,
+      "date": "2020-01-08",
+      "mutation_length": 7.455062986532156e-18,
+      "num_date_confidence": [
+        2017.8736114177227,
+        2020.077868852459
+      ],
+      "numdate": 2020.0205489236243
+    },
+    "NODE_0000005": {
+      "branch_length": 3.95452253037663e-06,
+      "clock_length": 3.95452253037663e-06,
+      "date": "2020-01-14",
+      "mutation_length": 6.687217062430558e-05,
+      "num_date_confidence": [
+        2018.7774916998824,
+        2020.0486572278899
+      ],
+      "numdate": 2020.0361333380758
+    },
+    "NODE_0000006": {
+      "branch_length": 1.705409315696507e-05,
+      "clock_length": 1.705409315696507e-05,
+      "date": "2020-01-19",
+      "mutation_length": 3.3435635164757576e-05,
+      "num_date_confidence": [
+        2020.0415590619482,
+        2020.0505464480875
+      ],
+      "numdate": 2020.0505464480875
+    },
+    "NODE_0000007": {
+      "branch_length": 7.360764518141004e-05,
+      "clock_length": 7.360764518141004e-05,
+      "date": "2020-02-11",
+      "mutation_length": 6.687338049704851e-05,
+      "num_date_confidence": [
+        2019.3659752676763,
+        2020.1786215421248
+      ],
+      "numdate": 2020.1127552725575
+    },
+    "NODE_0000008": {
+      "branch_length": 0.00014264104183595846,
+      "clock_length": 0.00014264104183595846,
+      "date": "2020-02-26",
+      "mutation_length": 7.452750307344494e-18,
+      "num_date_confidence": [
+        2018.3352381101977,
+        2020.2254098360656
+      ],
+      "numdate": 2020.1533429745828
+    },
+    "NODE_0000010": {
+      "branch_length": 5.7384762410215315e-05,
+      "clock_length": 5.7384762410215315e-05,
+      "date": "2020-01-13",
+      "mutation_length": 3.343571450463744e-05,
+      "num_date_confidence": [
+        2018.4027908107655,
+        2020.0341530054645
+      ],
+      "numdate": 2020.032791209723
+    },
+    "NODE_0000011": {
+      "branch_length": 2.224062463229812e-05,
+      "clock_length": 2.224062463229812e-05,
+      "date": "2019-12-26",
+      "mutation_length": 7.455062986532156e-18,
+      "num_date_confidence": [
+        2017.8865454144714,
+        2020.0293340849578
+      ],
+      "numdate": 2019.9842930054504
+    },
+    "NODE_0000012": {
+      "branch_length": 3.8257612931415946e-05,
+      "clock_length": 3.8257612931415946e-05,
+      "date": "2020-02-23",
+      "mutation_length": 7.453045978047721e-18,
+      "num_date_confidence": [
+        2019.966966072592,
+        2020.1764719749765
+      ],
+      "numdate": 2020.1450883423308
+    },
+    "NODE_0000013": {
+      "branch_length": 8.947550931724224e-05,
+      "clock_length": 8.947550931724224e-05,
+      "date": "2020-01-16",
+      "mutation_length": 0.00010031145225853728,
+      "num_date_confidence": [
+        2017.4834264221572,
+        2020.1089165502624
+      ],
+      "numdate": 2020.0411159499872
+    },
+    "NODE_0000014": {
+      "branch_length": 9.439990069241676e-05,
+      "clock_length": 9.439990069241676e-05,
+      "date": "2020-02-11",
+      "mutation_length": 0.00013375253386497922,
+      "num_date_confidence": [
+        2019.9835720757474,
+        2020.15732136064
+      ],
+      "numdate": 2020.112572417744
+    },
+    "NODE_0000015": {
+      "branch_length": 1.8223977819833937e-05,
+      "clock_length": 1.8223977819833937e-05,
+      "date": "2020-02-16",
+      "mutation_length": 7.454450402775995e-18,
+      "num_date_confidence": [
+        2019.9890666484123,
+        2020.1664809221174
+      ],
+      "numdate": 2020.1279742450208
+    },
+    "NODE_0000016": {
+      "branch_length": 8.070167099313304e-05,
+      "clock_length": 8.070167099313304e-05,
+      "date": "2020-03-12",
+      "mutation_length": 0.00010031829497006019,
+      "num_date_confidence": [
+        2020.1734364230795,
+        2020.2117486338798
+      ],
+      "numdate": 2020.196178520173
+    },
+    "NODE_0000017": {
+      "branch_length": 2.054680899019935e-05,
+      "clock_length": 2.054680899019935e-05,
+      "date": "2020-02-17",
+      "mutation_length": 3.343686823107205e-05,
+      "num_date_confidence": [
+        2020.0268015236047,
+        2020.1653005464482
+      ],
+      "numdate": 2020.1299373644251
+    },
+    "NODE_0000019": {
+      "branch_length": 1.9033845383195093e-05,
+      "clock_length": 1.9033845383195093e-05,
+      "date": "2020-03-01",
+      "mutation_length": 7.459233978093943e-18,
+      "num_date_confidence": [
+        2020.1250565579305,
+        2020.2261832510274
+      ],
+      "numdate": 2020.164010630176
+    },
+    "NODE_0000020": {
+      "branch_length": 2.1282827965512304e-05,
+      "clock_length": 2.1282827965512304e-05,
+      "date": "2020-02-24",
+      "mutation_length": 3.3436795664652135e-05,
+      "num_date_confidence": [
+        2020.0803342156944,
+        2020.2020934202196
+      ],
+      "numdate": 2020.1479243507752
+    },
+    "NODE_0000022": {
+      "branch_length": 3.548075801810695e-05,
+      "clock_length": 3.548075801810695e-05,
+      "date": "2020-03-12",
+      "mutation_length": 3.3437345442751246e-05,
+      "num_date_confidence": [
+        2020.1637250813408,
+        2020.2328011456266
+      ],
+      "numdate": 2020.1939968665536
+    },
+    "NODE_0000023": {
+      "branch_length": 1.1214244941900155e-05,
+      "clock_length": 1.1214244941900155e-05,
+      "date": "2020-02-27",
+      "mutation_length": 3.3437345442751246e-05,
+      "num_date_confidence": [
+        2020.101512790294,
+        2020.2047935172511
+      ],
+      "numdate": 2020.1574019667678
+    },
+    "NODE_0000024": {
+      "branch_length": 1.1025881231939427e-05,
+      "clock_length": 1.1025881231939427e-05,
+      "date": "2020-03-02",
+      "mutation_length": 6.68799216970649e-05,
+      "num_date_confidence": [
+        2020.1259132643836,
+        2020.2089194017542
+      ],
+      "numdate": 2020.166720388903
+    },
+    "NODE_0000025": {
+      "branch_length": 2.0845548501417755e-05,
+      "clock_length": 2.0845548501417755e-05,
+      "date": "2020-03-08",
+      "mutation_length": 7.463748489986727e-18,
+      "num_date_confidence": [
+        2020.1671135777688,
+        2020.2200460643498
+      ],
+      "numdate": 2020.184337812535
+    },
+    "NODE_0000026": {
+      "branch_length": 8.144467113800624e-06,
+      "clock_length": 8.144467113800624e-06,
+      "date": "2020-03-10",
+      "mutation_length": 7.463748489986727e-18,
+      "num_date_confidence": [
+        2020.1723324191387,
+        2020.2254098360656
+      ],
+      "numdate": 2020.1912210340242
+    },
+    "SARS-CoV-2/canine/HKG/20-03695/2020-MT270814.gb": {
+      "branch_length": 1.8423100177902807e-05,
+      "clock_length": 1.8423100177902807e-05,
+      "date": "2020-03-18",
+      "mutation_length": 7.460803617970562e-18,
+      "num_date_confidence": [
+        2020.2117486338798,
+        2020.2117486338798
+      ],
+      "numdate": 2020.2117486338798,
+      "raw_date": "2020-03-18"
+    },
+    "SARS-CoV-2/human/AUS/VIC1012/2020-MT451693.gb": {
+      "branch_length": 6.368344722781542e-05,
+      "clock_length": 6.368344722781542e-05,
+      "date": "2020-04-01",
+      "mutation_length": 3.345632464722483e-05,
+      "num_date_confidence": [
+        2020.25,
+        2020.25
+      ],
+      "numdate": 2020.25,
+      "raw_date": "2020-04-01"
+    },
+    "SARS-CoV-2/human/AUS/VIC1211/2020-MT451802.gb": {
+      "branch_length": 7.76937844098134e-05,
+      "clock_length": 7.76937844098134e-05,
+      "date": "2020-04-01",
+      "mutation_length": 6.691597366102029e-05,
+      "num_date_confidence": [
+        2020.25,
+        2020.25
+      ],
+      "numdate": 2020.25,
+      "raw_date": "2020-04-01"
+    },
+    "SARS-CoV-2/human/AUS/VIC1256/2020-MT451831.gb": {
+      "branch_length": 9.859367500501953e-05,
+      "clock_length": 9.859367500501953e-05,
+      "date": "2020-04-11",
+      "mutation_length": 6.691600371576845e-05,
+      "num_date_confidence": [
+        2020.2773224043715,
+        2020.2773224043715
+      ],
+      "numdate": 2020.2773224043715,
+      "raw_date": "2020-04-11"
+    },
+    "SARS-CoV-2/human/AUS/VIC38/2020-MT450953.gb": {
+      "branch_length": 7.649459764607957e-05,
+      "clock_length": 7.649459764607957e-05,
+      "date": "2020-03-11",
+      "mutation_length": 0.00010038049855039794,
+      "num_date_confidence": [
+        2020.1926229508197,
+        2020.1926229508197
+      ],
+      "numdate": 2020.1926229508197,
+      "raw_date": "2020-03-11"
+    },
+    "SARS-CoV-2/human/AUS/VIC492/2020-MT451350.gb": {
+      "branch_length": 8.527201750808803e-05,
+      "clock_length": 8.527201750808803e-05,
+      "date": "2020-03-23",
+      "mutation_length": 0.0001342962617759847,
+      "num_date_confidence": [
+        2020.2254098360656,
+        2020.2254098360656
+      ],
+      "numdate": 2020.2254098360656,
+      "raw_date": "2020-03-23"
+    },
+    "SARS-CoV-2/human/AUS/VIC845/2020-MT451589.gb": {
+      "branch_length": 0.0001517609328468776,
+      "clock_length": 0.0001517609328468776,
+      "date": "2020-04-04",
+      "mutation_length": 0.0001338468492868511,
+      "num_date_confidence": [
+        2020.2581967213114,
+        2020.2581967213114
+      ],
+      "numdate": 2020.2581967213114,
+      "raw_date": "2020-04-04"
+    },
+    "SARS-CoV-2/human/GRC/145_34726/2020-MT459861.gb": {
+      "branch_length": 0.00020132836328871359,
+      "clock_length": 0.00020132836328871359,
+      "date": "2020-03-16",
+      "mutation_length": 0.00013379819364467183,
+      "num_date_confidence": [
+        2020.2062841530055,
+        2020.2062841530055
+      ],
+      "numdate": 2020.2062841530055,
+      "raw_date": "2020-03-16"
+    },
+    "SARS-CoV-2/human/GUM/GU-NHG-01/2020-MT459985.gb": {
+      "branch_length": 0.00025209720392669455,
+      "clock_length": 0.00025209720392669455,
+      "date": "2020-03-26",
+      "mutation_length": 0.00023409538713949497,
+      "num_date_confidence": [
+        2020.233606557377,
+        2020.233606557377
+      ],
+      "numdate": 2020.233606557377,
+      "raw_date": "2020-03-26"
+    },
+    "SARS-CoV-2/human/HKG/HKU-908b/2020-MT114419.gb": {
+      "branch_length": 6.782293379494603e-05,
+      "clock_length": 6.782293379494603e-05,
+      "date": "2020-01-29",
+      "mutation_length": 3.344392833948496e-05,
+      "num_date_confidence": [
+        2020.077868852459,
+        2020.077868852459
+      ],
+      "numdate": 2020.077868852459,
+      "raw_date": "2020-01-29"
+    },
+    "SARS-CoV-2/human/NPL/61-TW/2020-MT072688.gb": {
+      "branch_length": 1.611324094483559e-06,
+      "clock_length": 1.611324094483559e-06,
+      "date": "2020-01-13",
+      "mutation_length": 3.343994818304723e-05,
+      "num_date_confidence": [
+        2020.0341530054645,
+        2020.0341530054645
+      ],
+      "numdate": 2020.0341530054645,
+      "raw_date": "2020-01-13"
+    },
+    "SARS-CoV-2/human/TWN/CGMH-CGU-11/2020-MT374107.gb": {
+      "branch_length": 0.00018896699967989599,
+      "clock_length": 0.00018896699967989599,
+      "date": "2020-03-14",
+      "mutation_length": 0.00023408513372284826,
+      "num_date_confidence": [
+        2020.200819672131,
+        2020.200819672131
+      ],
+      "numdate": 2020.200819672131,
+      "raw_date": "2020-03-14"
+    },
+    "SARS-CoV-2/human/USA/CA-CZB-1088/2020-MT449679.gb": {
+      "branch_length": 0.00012729948262590245,
+      "clock_length": 0.00012729948262590245,
+      "date": "2020-04-05",
+      "mutation_length": 6.687723425084522e-05,
+      "num_date_confidence": [
+        2020.2609289617487,
+        2020.2609289617487
+      ],
+      "numdate": 2020.2609289617487,
+      "raw_date": "2020-04-05"
+    },
+    "SARS-CoV-2/human/USA/CT-UW-6385/2020-MT412330.gb": {
+      "branch_length": 9.853933291123116e-05,
+      "clock_length": 9.853933291123116e-05,
+      "date": "2020-04-01",
+      "mutation_length": 0.00013379283977450957,
+      "num_date_confidence": [
+        2020.25,
+        2020.25
+      ],
+      "numdate": 2020.25,
+      "raw_date": "2020-04-01"
+    },
+    "SARS-CoV-2/human/USA/DC-CDC-1734/2020-MT380728.gb": {
+      "branch_length": 9.204696790558113e-05,
+      "clock_length": 9.204696790558113e-05,
+      "date": "2020-03-29",
+      "mutation_length": 3.3437345442751246e-05,
+      "num_date_confidence": [
+        2020.2418032786886,
+        2020.2418032786886
+      ],
+      "numdate": 2020.2418032786886,
+      "raw_date": "2020-03-29"
+    },
+    "SARS-CoV-2/human/USA/MI-MDHHS-SC20149/2020-MT439262.gb": {
+      "branch_length": 4.045337990686012e-05,
+      "clock_length": 4.045337990686012e-05,
+      "date": "2020-03-23",
+      "mutation_length": 7.461796687143298e-18,
+      "num_date_confidence": [
+        2020.2254098360656,
+        2020.2254098360656
+      ],
+      "numdate": 2020.2254098360656,
+      "raw_date": "2020-03-23"
+    },
+    "SARS-CoV-2/human/USA/NY-PV09064/2020-MT370968.gb": {
+      "branch_length": 5.9744749725514936e-05,
+      "clock_length": 5.9744749725514936e-05,
+      "date": "2020-03-20",
+      "mutation_length": 0.00010036463802148054,
+      "num_date_confidence": [
+        2020.217213114754,
+        2020.217213114754
+      ],
+      "numdate": 2020.217213114754,
+      "raw_date": "2020-03-20"
+    },
+    "SARS-CoV-2/human/USA/TX_2817/2020-MT304490.gb": {
+      "branch_length": 4.1842947154463364e-05,
+      "clock_length": 4.1842947154463364e-05,
+      "date": "2020-03-01",
+      "mutation_length": 6.687557684391673e-05,
+      "num_date_confidence": [
+        2020.1653005464482,
+        2020.1653005464482
+      ],
+      "numdate": 2020.1653005464482,
+      "raw_date": "2020-03-01"
+    },
+    "SARS-CoV-2/human/USA/UT-00349/2020-MT334570.gb": {
+      "branch_length": 4.686756409091056e-05,
+      "clock_length": 4.686756409091056e-05,
+      "date": "2020-03-26",
+      "mutation_length": 3.343988762174051e-05,
+      "num_date_confidence": [
+        2020.233606557377,
+        2020.233606557377
+      ],
+      "numdate": 2020.233606557377,
+      "raw_date": "2020-03-26"
+    },
+    "SARS-CoV-2/human/USA/WA-NH17/2020-MT262908.gb": {
+      "branch_length": 6.271036622235897e-05,
+      "clock_length": 6.271036622235897e-05,
+      "date": "2020-03-13",
+      "mutation_length": 3.3435637168178815e-05,
+      "num_date_confidence": [
+        2020.198087431694,
+        2020.198087431694
+      ],
+      "numdate": 2020.198087431694,
+      "raw_date": "2020-03-13"
+    },
+    "SARS-CoV-2/human/USA/WA-UW-1716/2020-MT326132.gb": {
+      "branch_length": 5.9744749725514936e-05,
+      "clock_length": 5.9744749725514936e-05,
+      "date": "2020-03-20",
+      "mutation_length": 0.00013377412492652762,
+      "num_date_confidence": [
+        2020.217213114754,
+        2020.217213114754
+      ],
+      "numdate": 2020.217213114754,
+      "raw_date": "2020-03-20"
+    },
+    "SARS-CoV-2/human/USA/WA-UW-1870/2020-MT326048.gb": {
+      "branch_length": 4.045337990686012e-05,
+      "clock_length": 4.045337990686012e-05,
+      "date": "2020-03-23",
+      "mutation_length": 3.344804175448953e-05,
+      "num_date_confidence": [
+        2020.2254098360656,
+        2020.2254098360656
+      ],
+      "numdate": 2020.2254098360656,
+      "raw_date": "2020-03-23"
+    },
+    "SARS-CoV-2/human/USA/WA-UW-3843/2020-MT358691.gb": {
+      "branch_length": 9.340080448241064e-05,
+      "clock_length": 9.340080448241064e-05,
+      "date": "2020-03-27",
+      "mutation_length": 3.344866991166922e-05,
+      "num_date_confidence": [
+        2020.2363387978141,
+        2020.2363387978141
+      ],
+      "numdate": 2020.2363387978141,
+      "raw_date": "2020-03-27"
+    },
+    "SARS-CoV-2/human/USA/WA-UW-4270/2020-MT461626.gb": {
+      "branch_length": 0.00024392599252637216,
+      "clock_length": 0.00024392599252637216,
+      "date": "2020-03-31",
+      "mutation_length": 0.00036794725197628845,
+      "num_date_confidence": [
+        2020.2472677595629,
+        2020.2472677595629
+      ],
+      "numdate": 2020.2472677595629,
+      "raw_date": "2020-03-31"
+    },
+    "SARS-CoV-2/human/USA/WA-UW239/2020-MT251975.gb": {
+      "branch_length": 0.00010420086108587305,
+      "clock_length": 0.00010420086108587305,
+      "date": "2020-03-14",
+      "mutation_length": 0.00023415434595189333,
+      "num_date_confidence": [
+        2020.200819672131,
+        2020.200819672131
+      ],
+      "numdate": 2020.200819672131,
+      "raw_date": "2020-03-14"
+    },
+    "SARS-CoV-2/human/USA/WA-UW314/2020-MT263395.gb": {
+      "branch_length": 6.594324815445711e-05,
+      "clock_length": 6.594324815445711e-05,
+      "date": "2020-03-14",
+      "mutation_length": 0.00010031728520148628,
+      "num_date_confidence": [
+        2020.200819672131,
+        2020.200819672131
+      ],
+      "numdate": 2020.200819672131,
+      "raw_date": "2020-03-14"
+    },
+    "SARS-CoV2/human/USA/PR-CDC-S9/2020-MT419818.gb": {
+      "branch_length": 6.94433955220785e-05,
+      "clock_length": 6.94433955220785e-05,
+      "date": "2020-03-23",
+      "mutation_length": 0.00016728194674238086,
+      "num_date_confidence": [
+        2020.2254098360656,
+        2020.2254098360656
+      ],
+      "numdate": 2020.2254098360656,
+      "raw_date": "2020-03-23"
+    }
+  }
+}

@@ -1,0 +1,506 @@
+{
+  "generated_by": {
+    "program": "augur",
+    "version": "8.0.0"
+  },
+  "models": {
+    "country": {
+      "alphabet": [
+        "Australia",
+        "Greece",
+        "Guam",
+        "Hong Kong",
+        "Nepal",
+        "Puerto Rico",
+        "Taiwan",
+        "USA",
+        "?"
+      ],
+      "equilibrium_probabilities": [
+        0.09063672977678201,
+        0.11742003637480258,
+        0.12716578930450825,
+        0.1346749935094262,
+        0.12091492042504959,
+        0.11744735887918782,
+        0.11421698003229899,
+        0.17752319169794453
+      ],
+      "rate": 292.0302908498333,
+      "transition_matrix": [
+        [
+          0.0,
+          0.9414063370367465,
+          0.9360939616132433,
+          1.4089461649766728,
+          0.9968343348324276,
+          0.8725725634280234,
+          0.9182515136092112,
+          4.32427321234082
+        ],
+        [
+          0.9414063370367465,
+          0.0,
+          0.873580800212926,
+          0.8747399977555448,
+          0.8721891648800354,
+          0.8678130066410026,
+          0.8730320455227456,
+          1.3177693520509834
+        ],
+        [
+          0.9360939616132433,
+          0.873580800212926,
+          0.0,
+          1.2283426526702723,
+          0.8746464050687143,
+          0.8714654068580404,
+          0.9038159408267419,
+          1.103431584389397
+        ],
+        [
+          1.4089461649766728,
+          0.8747399977555448,
+          1.2283426526702723,
+          0.0,
+          0.8757385908674543,
+          0.8720009258393758,
+          0.907783614709288,
+          1.1481347614827302
+        ],
+        [
+          0.9968343348324276,
+          0.8721891648800354,
+          0.8746464050687143,
+          0.8757385908674543,
+          0.0,
+          0.8669772325128084,
+          0.8734926676761008,
+          1.2032034932199605
+        ],
+        [
+          0.8725725634280234,
+          0.8678130066410026,
+          0.8714654068580404,
+          0.8720009258393758,
+          0.8669772325128084,
+          0.0,
+          0.8710809004230725,
+          1.3169264776458447
+        ],
+        [
+          0.9182515136092112,
+          0.8730320455227456,
+          0.9038159408267419,
+          0.907783614709288,
+          0.8734926676761008,
+          0.8710809004230725,
+          0.0,
+          1.3780359790744978
+        ],
+        [
+          4.32427321234082,
+          1.3177693520509834,
+          1.103431584389397,
+          1.1481347614827302,
+          1.2032034932199605,
+          1.3169264776458447,
+          1.3780359790744978,
+          0.0
+        ]
+      ]
+    }
+  },
+  "nodes": {
+    "FDAARGOS_983-MT233526.gb": {
+      "country": "USA",
+      "country_confidence": {
+        "USA": 1.0
+      },
+      "country_entropy": -1.000088900581841e-12
+    },
+    "NODE_0000000": {
+      "country": "USA",
+      "country_confidence": {
+        "Australia": 0.1545824388915924,
+        "Hong Kong": 0.07115470448585623,
+        "Taiwan": 0.1542031374912164,
+        "USA": 0.5071091474363563
+      },
+      "country_entropy": 1.4932962619041028
+    },
+    "NODE_0000003": {
+      "country": "Hong Kong",
+      "country_confidence": {
+        "Australia": 0.0780459370588465,
+        "Guam": 0.33992818207203773,
+        "Hong Kong": 0.38786590215959754,
+        "USA": 0.1425240067286356
+      },
+      "country_entropy": 1.4323410818221989
+    },
+    "NODE_0000005": {
+      "country": "USA",
+      "country_confidence": {
+        "Australia": 0.1786599143175454,
+        "Greece": 0.1279389192384338,
+        "Nepal": 0.008955115266756377,
+        "USA": 0.6649171441583116
+      },
+      "country_entropy": 0.9880108545402428
+    },
+    "NODE_0000006": {
+      "country": "USA",
+      "country_confidence": {
+        "Australia": 0.04440814825759651,
+        "Greece": 0.011935419566804923,
+        "Nepal": 0.0015278323083131237,
+        "USA": 0.9370198306416528
+      },
+      "country_entropy": 0.2960185451764902
+    },
+    "NODE_0000007": {
+      "country": "USA",
+      "country_confidence": {
+        "Australia": 0.015439690142355028,
+        "Greece": 0.0014776654213291783,
+        "USA": 0.9804589203709339
+      },
+      "country_entropy": 0.11316663301303126
+    },
+    "NODE_0000008": {
+      "country": "USA",
+      "country_confidence": {
+        "Australia": 0.4799330846874175,
+        "Hong Kong": 0.002073622216647219,
+        "Nepal": 0.003469086663413145,
+        "USA": 0.5094305227909348
+      },
+      "country_entropy": 0.7621702791639356
+    },
+    "NODE_0000010": {
+      "country": "USA",
+      "country_confidence": {
+        "Australia": 0.42526228892482465,
+        "Greece": 0.0061383813696382055,
+        "Nepal": 0.01793418507438797,
+        "USA": 0.5409304856151606
+      },
+      "country_entropy": 0.856156374833496
+    },
+    "NODE_0000011": {
+      "country": "USA",
+      "country_confidence": {
+        "Australia": 0.24069876134855864,
+        "Guam": 0.09277303801928569,
+        "Hong Kong": 0.11401815725119666,
+        "USA": 0.45923180267134756
+      },
+      "country_entropy": 1.495258531955852
+    },
+    "NODE_0000012": {
+      "country": "USA",
+      "country_confidence": {
+        "Australia": 0.008122056782822023,
+        "USA": 0.9895858203031226
+      },
+      "country_entropy": 0.06745698708297732
+    },
+    "NODE_0000013": {
+      "country": "USA",
+      "country_confidence": {
+        "Australia": 0.06583776074582043,
+        "Hong Kong": 0.023169426918848934,
+        "Taiwan": 0.26883619967000577,
+        "USA": 0.5964056113140668
+      },
+      "country_entropy": 1.1291946173654224
+    },
+    "NODE_0000014": {
+      "country": "Australia",
+      "country_confidence": {
+        "Australia": 0.6157763278655889,
+        "Hong Kong": 0.002705445334209186,
+        "Nepal": 0.002548781022048088,
+        "USA": 0.37507667899993796
+      },
+      "country_entropy": 0.7244855983097103
+    },
+    "NODE_0000015": {
+      "country": "Australia",
+      "country_confidence": {
+        "Australia": 0.9012980766137252,
+        "Hong Kong": 0.009520257848298418,
+        "USA": 0.08556953343167316
+      },
+      "country_entropy": 0.3744410780727768
+    },
+    "NODE_0000016": {
+      "country": "Australia",
+      "country_confidence": {
+        "Australia": 0.8683953128511509,
+        "Guam": 0.0019278971477696657,
+        "Hong Kong": 0.07023057471632432,
+        "USA": 0.05370209948322292
+      },
+      "country_entropy": 0.5157475927429298
+    },
+    "NODE_0000017": {
+      "country": "USA",
+      "country_confidence": {
+        "Australia": 0.4768374119563846,
+        "USA": 0.5222501955209369
+      },
+      "country_entropy": 0.7003772922000817
+    },
+    "NODE_0000019": {
+      "country": "USA",
+      "country_confidence": {
+        "Australia": 0.14274055161199958,
+        "USA": 0.8530343095931553
+      },
+      "country_entropy": 0.4440982574140647
+    },
+    "NODE_0000020": {
+      "country": "USA",
+      "country_confidence": {
+        "Australia": 0.18685029226142524,
+        "USA": 0.8086013020726327
+      },
+      "country_entropy": 0.5178502670993861
+    },
+    "NODE_0000022": {
+      "country": "USA",
+      "country_confidence": {
+        "Australia": 0.2729200188228395,
+        "Hong Kong": 0.0013885192005059068,
+        "Taiwan": 0.001078821655550248,
+        "USA": 0.7207906169779073
+      },
+      "country_entropy": 0.6334676723299733
+    },
+    "NODE_0000023": {
+      "country": "USA",
+      "country_confidence": {
+        "Australia": 0.038245781608263654,
+        "USA": 0.9587102028699732
+      },
+      "country_entropy": 0.1883179490765195
+    },
+    "NODE_0000024": {
+      "country": "USA",
+      "country_confidence": {
+        "Australia": 0.0038093445716327096,
+        "USA": 0.9960729969681972
+      },
+      "country_entropy": 0.026274169279192076
+    },
+    "NODE_0000025": {
+      "country": "USA",
+      "country_confidence": {
+        "Australia": 0.20111275944786688,
+        "Hong Kong": 0.0013745680736417679,
+        "Taiwan": 0.0011086154898948747,
+        "USA": 0.7924829418641096
+      },
+      "country_entropy": 0.5506326213843016
+    },
+    "NODE_0000026": {
+      "country": "USA",
+      "country_confidence": {
+        "Australia": 0.03879032883886777,
+        "USA": 0.9579604015938489
+      },
+      "country_entropy": 0.19160863961190006
+    },
+    "SARS-CoV-2/canine/HKG/20-03695/2020-MT270814.gb": {
+      "country": "Hong Kong",
+      "country_confidence": {
+        "Hong Kong": 1.0
+      },
+      "country_entropy": -1.000088900581841e-12
+    },
+    "SARS-CoV-2/human/AUS/VIC1012/2020-MT451693.gb": {
+      "country": "Australia",
+      "country_confidence": {
+        "Australia": 1.0
+      },
+      "country_entropy": -1.000088900581841e-12
+    },
+    "SARS-CoV-2/human/AUS/VIC1211/2020-MT451802.gb": {
+      "country": "Australia",
+      "country_confidence": {
+        "Australia": 0.9999999999999999
+      },
+      "country_entropy": -9.99866855976916e-13
+    },
+    "SARS-CoV-2/human/AUS/VIC1256/2020-MT451831.gb": {
+      "country": "Australia",
+      "country_confidence": {
+        "Australia": 0.9999999999999999
+      },
+      "country_entropy": -9.99866855976916e-13
+    },
+    "SARS-CoV-2/human/AUS/VIC38/2020-MT450953.gb": {
+      "country": "Australia",
+      "country_confidence": {
+        "Australia": 1.0
+      },
+      "country_entropy": -1.000088900581841e-12
+    },
+    "SARS-CoV-2/human/AUS/VIC492/2020-MT451350.gb": {
+      "country": "Australia",
+      "country_confidence": {
+        "Australia": 1.0
+      },
+      "country_entropy": -1.000088900581841e-12
+    },
+    "SARS-CoV-2/human/AUS/VIC845/2020-MT451589.gb": {
+      "country": "Australia",
+      "country_confidence": {
+        "Australia": 1.0
+      },
+      "country_entropy": -1.000088900581841e-12
+    },
+    "SARS-CoV-2/human/GRC/145_34726/2020-MT459861.gb": {
+      "country": "Greece",
+      "country_confidence": {
+        "Greece": 0.9999999999999999
+      },
+      "country_entropy": -9.99866855976916e-13
+    },
+    "SARS-CoV-2/human/GUM/GU-NHG-01/2020-MT459985.gb": {
+      "country": "Guam",
+      "country_confidence": {
+        "Guam": 1.0
+      },
+      "country_entropy": -1.000088900581841e-12
+    },
+    "SARS-CoV-2/human/HKG/HKU-908b/2020-MT114419.gb": {
+      "country": "Hong Kong",
+      "country_confidence": {
+        "Hong Kong": 1.0
+      },
+      "country_entropy": -1.000088900581841e-12
+    },
+    "SARS-CoV-2/human/NPL/61-TW/2020-MT072688.gb": {
+      "country": "Nepal",
+      "country_confidence": {
+        "Nepal": 1.0
+      },
+      "country_entropy": -1.000088900581841e-12
+    },
+    "SARS-CoV-2/human/TWN/CGMH-CGU-11/2020-MT374107.gb": {
+      "country": "Taiwan",
+      "country_confidence": {
+        "Taiwan": 0.9999999999999999
+      },
+      "country_entropy": -9.99866855976916e-13
+    },
+    "SARS-CoV-2/human/USA/CA-CZB-1088/2020-MT449679.gb": {
+      "country": "USA",
+      "country_confidence": {
+        "USA": 0.9999999999999999
+      },
+      "country_entropy": -9.99866855976916e-13
+    },
+    "SARS-CoV-2/human/USA/CT-UW-6385/2020-MT412330.gb": {
+      "country": "USA",
+      "country_confidence": {
+        "USA": 1.0
+      },
+      "country_entropy": -1.000088900581841e-12
+    },
+    "SARS-CoV-2/human/USA/DC-CDC-1734/2020-MT380728.gb": {
+      "country": "USA",
+      "country_confidence": {
+        "USA": 1.0
+      },
+      "country_entropy": -1.000088900581841e-12
+    },
+    "SARS-CoV-2/human/USA/MI-MDHHS-SC20149/2020-MT439262.gb": {
+      "country": "USA",
+      "country_confidence": {
+        "USA": 1.0
+      },
+      "country_entropy": -1.000088900581841e-12
+    },
+    "SARS-CoV-2/human/USA/NY-PV09064/2020-MT370968.gb": {
+      "country": "USA",
+      "country_confidence": {
+        "USA": 1.0
+      },
+      "country_entropy": -1.000088900581841e-12
+    },
+    "SARS-CoV-2/human/USA/TX_2817/2020-MT304490.gb": {
+      "country": "USA",
+      "country_confidence": {
+        "USA": 1.0
+      },
+      "country_entropy": -1.000088900581841e-12
+    },
+    "SARS-CoV-2/human/USA/UT-00349/2020-MT334570.gb": {
+      "country": "USA",
+      "country_confidence": {
+        "USA": 1.0
+      },
+      "country_entropy": -1.000088900581841e-12
+    },
+    "SARS-CoV-2/human/USA/WA-NH17/2020-MT262908.gb": {
+      "country": "USA",
+      "country_confidence": {
+        "USA": 1.0
+      },
+      "country_entropy": -1.000088900581841e-12
+    },
+    "SARS-CoV-2/human/USA/WA-UW-1716/2020-MT326132.gb": {
+      "country": "USA",
+      "country_confidence": {
+        "USA": 1.0
+      },
+      "country_entropy": -1.000088900581841e-12
+    },
+    "SARS-CoV-2/human/USA/WA-UW-1870/2020-MT326048.gb": {
+      "country": "USA",
+      "country_confidence": {
+        "USA": 1.0
+      },
+      "country_entropy": -1.000088900581841e-12
+    },
+    "SARS-CoV-2/human/USA/WA-UW-3843/2020-MT358691.gb": {
+      "country": "USA",
+      "country_confidence": {
+        "USA": 1.0
+      },
+      "country_entropy": -1.000088900581841e-12
+    },
+    "SARS-CoV-2/human/USA/WA-UW-4270/2020-MT461626.gb": {
+      "country": "USA",
+      "country_confidence": {
+        "USA": 1.0
+      },
+      "country_entropy": -1.000088900581841e-12
+    },
+    "SARS-CoV-2/human/USA/WA-UW239/2020-MT251975.gb": {
+      "country": "USA",
+      "country_confidence": {
+        "USA": 1.0
+      },
+      "country_entropy": -1.000088900581841e-12
+    },
+    "SARS-CoV-2/human/USA/WA-UW314/2020-MT263395.gb": {
+      "country": "USA",
+      "country_confidence": {
+        "USA": 1.0
+      },
+      "country_entropy": -1.000088900581841e-12
+    },
+    "SARS-CoV2/human/USA/PR-CDC-S9/2020-MT419818.gb": {
+      "country": "Puerto Rico",
+      "country_confidence": {
+        "Puerto Rico": 1.0
+      },
+      "country_entropy": -1.000088900581841e-12
+    }
+  }
+}
