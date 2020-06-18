@@ -3,17 +3,16 @@ Extract patient metadata, viral metadata and viral sequence from GenBank .gb fil
 
 @author: Yilin Xu <yilinxu@uchicago.edu>
 """
-from Bio import SeqIO
-from os import walk, path
-import pandas as pd
-from typing import Tuple, Dict
-from itertools import repeat
-import pandas as pd
-import json
 import re
+from itertools import repeat
+from os import path
+from typing import Tuple, Dict
 
-from gen3_augur_pyutils.common.logger import Logger
+import pandas as pd
+from Bio import SeqIO
+
 from gen3_augur_pyutils.common.io import IO
+from gen3_augur_pyutils.common.logger import Logger
 from gen3_augur_pyutils.common.types import ArgParserT, NamespaceT, LoggerT
 from gen3_augur_pyutils.subcommands import Subcommand
 
@@ -99,6 +98,7 @@ class ParseGenBank(Subcommand):
 
         # Merge Manifest and Metadata
         merge_manifest = metadata_df.merge(manifest, how='inner', left_on='file', right_on='file_name')
+        merge_manifest.rename(columns={'object_id': 'guid'}, inplace=True)
 
         # Write merge dataframe
         merge_manifest.to_csv(options.metadata, index=False)
