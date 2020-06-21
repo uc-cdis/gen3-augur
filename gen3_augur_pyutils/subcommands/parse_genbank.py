@@ -71,7 +71,7 @@ class ParseGenBank(Subcommand):
             try:
                 date = datetime.strptime(date, '%Y-%m-%d')
             except Exception as e:
-                date = datetime.strptime(date, '%Y-%m-%d')
+                date = datetime.strptime(date, '%Y-%m')
         finally:
             metadata['collection_date'] = date.date()
         return (metadata, seq)
