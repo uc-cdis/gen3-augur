@@ -66,7 +66,7 @@ class ParseGenBank(Subcommand):
         metadata['accession'] = gb_record.name
         date = metadata['collection_date']
         try:
-            date = datetime.strptime(date, '%d-%M-%Y')
+            date = datetime.strptime(date, '%d-%B-%Y')
         except Exception as e:
             try:
                 date = datetime.strptime(date, '%Y-%m-%d')
