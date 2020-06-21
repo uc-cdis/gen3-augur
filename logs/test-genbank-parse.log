@@ -6,3 +6,19 @@
 [INFO] [20200617 16:25:29] [gen3_augur_pyutils.ParseGenBank] - FJ882958.gb is not Covid19 sample, remove the file
 [INFO] [20200617 16:25:29] [gen3_augur_pyutils.ParseGenBank] - EU371562.gb is not Covid19 sample, remove the file
 [INFO] [20200617 16:25:29] [gen3_augur_pyutils.ParseGenBank] - JF292910.gb is not Covid19 sample, remove the file
+[INFO] [20200620 17:35:42] [gen3_augur_pyutils.ParseGenBank] - None
+[INFO] [20200620 17:35:42] [gen3_augur_pyutils.ParseGenBank] - Parse Manifest file ../data/test-manifest.json
+[INFO] [20200620 17:35:42] [gen3_augur_pyutils.ParseGenBank] - FJ882958.gb is not Covid19 sample, remove the file
+[INFO] [20200620 17:35:42] [gen3_augur_pyutils.ParseGenBank] - EU371562.gb is not Covid19 sample, remove the file
+[INFO] [20200620 17:35:42] [gen3_augur_pyutils.ParseGenBank] - JF292910.gb is not Covid19 sample, remove the file
+[INFO] [20200620 17:35:42] [gen3_augur_pyutils.ParseGenBank] - FJ882958.gb is not Covid19 sample, remove the file
+[INFO] [20200620 17:35:42] [gen3_augur_pyutils.ParseGenBank] - EU371562.gb is not Covid19 sample, remove the file
+[INFO] [20200620 17:35:42] [gen3_augur_pyutils.ParseGenBank] - JF292910.gb is not Covid19 sample, remove the file
+[INFO] [20200620 18:50:50] [gen3_augur_pyutils.ParseGenBank] - None
+[INFO] [20200620 18:50:50] [gen3_augur_pyutils.ParseGenBank] - Parse Manifest file ../data/test-manifest.json
+[INFO] [20200620 18:50:51] [gen3_augur_pyutils.ParseGenBank] - FJ882958.gb is not Covid19 sample, remove the file
+[INFO] [20200620 18:50:51] [gen3_augur_pyutils.ParseGenBank] - EU371562.gb is not Covid19 sample, remove the file
+[INFO] [20200620 18:50:51] [gen3_augur_pyutils.ParseGenBank] - JF292910.gb is not Covid19 sample, remove the file
+[INFO] [20200620 18:50:51] [gen3_augur_pyutils.ParseGenBank] - FJ882958.gb is not Covid19 sample, remove the file
+[INFO] [20200620 18:50:51] [gen3_augur_pyutils.ParseGenBank] - EU371562.gb is not Covid19 sample, remove the file
+[INFO] [20200620 18:50:51] [gen3_augur_pyutils.ParseGenBank] - JF292910.gb is not Covid19 sample, remove the file
