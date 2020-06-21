@@ -58,21 +58,20 @@ class ParseGenBank(Subcommand):
                 strain = gb_record.features[0].qualifiers['isolate'][0]
             except KeyError:
                 strain = gb_record.annotations['source']
-        date = metadata['collection_date']
-        try:
-            date = datetime.strptime(date, '%Y-%m-%d')
-        except Exception as e:
-            logger.error(f'{bf} date error:{e}')
-            date = datetime.strptime(date, '%Y-%m')
-        finally:
-            metadata['collection_date'] = date.date()
-        logger.info(metadata['collection_date'])
         strain = re.sub(' ', '/', strain)
         strain = strain + "-" + bf
         seq = '>' + strain + "\n" + gb_record.seq + "\n"
         metadata['strain'] = strain
         metadata['file'] = bf
         metadata['accession'] = gb_record.name
+        date = metadata['collection_date']
+        try:
+            date = datetime.strptime(date, '%d-%M-%Y')
+        except Exception as e:
+            logger.error(f'{bf} date error:{e}')
+            date = datetime.strptime(date, '%Y-%m')
+        finally:
+            metadata['collection_date'] = date.date()
         return (metadata, seq)
 
     @classmethod
