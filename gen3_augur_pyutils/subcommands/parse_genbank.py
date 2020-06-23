@@ -15,6 +15,7 @@ from Bio import SeqIO
 from gen3_augur_pyutils.common.io import IO
 from gen3_augur_pyutils.common.logger import Logger
 from gen3_augur_pyutils.common.types import ArgParserT, NamespaceT, LoggerT
+from gen3_augur_pyutils.common.date import date_conform
 from gen3_augur_pyutils.subcommands import Subcommand
 
 
@@ -64,22 +65,7 @@ class ParseGenBank(Subcommand):
         metadata['strain'] = strain
         metadata['file'] = bf
         metadata['accession'] = gb_record.name
-        date = metadata['collection_date']
-        try:
-            date = datetime.strptime(date, '%d-%b-%Y')
-        except:
-            try:
-                date = datetime.strptime(date, '%Y-%m-%d')
-            except:
-                try:
-                    date = datetime.strptime(date, '%Y-%m')
-                except:
-                    try:
-                        date = datetime.strptime(date, '%b-%Y')
-                    except:
-                        date = datetime.strptime(date, '%Y')
-        finally:
-            metadata['collection_date'] = date.date()
+        metadata['collection_date'] = date_conform(metadata['collection_date'])
         return (metadata, seq)
 
     @classmethod
