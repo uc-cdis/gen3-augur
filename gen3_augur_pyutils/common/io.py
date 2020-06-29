@@ -5,8 +5,11 @@
 import json
 from os import walk, path
 from typing import List
-from gen3_augur_pyutils.common.types import DataFrameT
+
 import pandas as pd
+
+from gen3_augur_pyutils.common.types import DataFrameT
+
 
 class IO(object):
     @classmethod
@@ -31,6 +34,17 @@ class IO(object):
         fh.close()
         items_df = pd.DataFrame(items)
         return items_df
+
+    @classmethod
+    def df_merge_columns(cls, file: str, columns: List) -> DataFrameT:
+        """
+        Parse csv file and merge columns
+        :param file:
+        :return: DataFrameT
+        """
+        df = pd.read_csv(file, header=True)
+        df['combine'] = df[columns].apply(lambda x: ','.join(x), axis=1)
+        return df
 
     @classmethod
     def write_file(cls, file: str, content: List) -> None:

@@ -4,7 +4,6 @@ Extract patient metadata, viral metadata and viral sequence from GenBank .gb fil
 @author: Yilin Xu <yilinxu@uchicago.edu>
 """
 import re
-from datetime import datetime
 from itertools import repeat
 from os import path
 from typing import Tuple, Dict
@@ -12,10 +11,11 @@ from typing import Tuple, Dict
 import pandas as pd
 from Bio import SeqIO
 
+from gen3_augur_pyutils.common.combine_df import merge_multiple_columns
+from gen3_augur_pyutils.common.date import date_conform
 from gen3_augur_pyutils.common.io import IO
 from gen3_augur_pyutils.common.logger import Logger
 from gen3_augur_pyutils.common.types import ArgParserT, NamespaceT, LoggerT
-from gen3_augur_pyutils.common.date import date_conform
 from gen3_augur_pyutils.subcommands import Subcommand
 
 
@@ -35,7 +35,7 @@ class ParseGenBank(Subcommand):
         parser.add_argument('--logfile', required=True, help='path of the log file')
 
     @classmethod
-    def parse_bg(cls, gbfile: str, logger: LoggerT) -> Tuple[Dict[str, str], str]:
+    def parse_bg(cls, gbfile: str, logger: LoggerT, mapper: Dict[str, str]) -> Tuple[Dict[str, str], str]:
         """
         Extract metadata and save sequence in fasta format with strain as header
         :param file: genbank file path
@@ -66,6 +66,7 @@ class ParseGenBank(Subcommand):
         metadata['file'] = bf
         metadata['accession'] = gb_record.name
         metadata['collection_date'] = date_conform(metadata['collection_date'])
+
         return (metadata, seq)
 
     @classmethod
@@ -96,10 +97,14 @@ class ParseGenBank(Subcommand):
         metadata_df = pd.DataFrame(metadata)
         metadata_df.rename(columns={'collection_date': 'date'}, inplace=True)
 
+        # Add region information
+        mapper = pd.read_csv('../../config/country_region_mapper.csv')
+        metadata_df = merge_multiple_columns(metadata_df, mapper, 'country', ['name', 'alpha-2', 'alpha-3'], 'region')
+
         # Write sequence into a multifastq file
         IO.write_file(options.fasta, seq)
 
-        # Merge Manifest and Metadata
+        # Merge Manifest and Metadataxczv
         merge_manifest = metadata_df.merge(manifest, how='inner', left_on='file', right_on='file_name')
         merge_manifest.rename(columns={'object_id': 'guid'}, inplace=True)
 

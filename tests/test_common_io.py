@@ -1,4 +1,4 @@
-"""Tests the gen3_augur_pyutils.common.io module"""
+
 import json
 import tempfile
 import unittest
