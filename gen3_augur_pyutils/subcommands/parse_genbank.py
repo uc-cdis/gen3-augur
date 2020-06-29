@@ -35,7 +35,7 @@ class ParseGenBank(Subcommand):
         parser.add_argument('--logfile', required=True, help='path of the log file')
 
     @classmethod
-    def parse_bg(cls, gbfile: str, logger: LoggerT, mapper: Dict[str, str]) -> Tuple[Dict[str, str], str]:
+    def parse_bg(cls, gbfile: str, logger: LoggerT) -> Tuple[Dict[str, str], str]:
         """
         Extract metadata and save sequence in fasta format with strain as header
         :param file: genbank file path
