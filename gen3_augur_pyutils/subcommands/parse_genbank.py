@@ -98,8 +98,13 @@ class ParseGenBank(Subcommand):
         metadata_df.rename(columns={'collection_date': 'date'}, inplace=True)
 
         # Add region information
-        mapper = pd.read_csv('../../config/country_region_mapper.csv')
-        metadata_df = merge_multiple_columns(metadata_df, mapper, 'country', ['name', 'alpha-2', 'alpha-3'], 'region')
+        dir_path = path.dirname(__file__)
+        dirs = dir_path.split('/')[:-2]
+        dirs = dirs.append('config')
+        relative_path = "/".join(dirs)
+        with IO.change_dir(relative_path):
+            mapper = pd.read_csv('country_region_mapper.csv')
+            metadata_df = merge_multiple_columns(metadata_df, mapper, 'country', ['name', 'alpha-2', 'alpha-3'], 'region')
 
         # Write sequence into a multifastq file
         IO.write_file(options.fasta, seq)
