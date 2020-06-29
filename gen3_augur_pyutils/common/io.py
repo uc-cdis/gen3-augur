@@ -3,8 +3,9 @@
 """
 
 import json
-from os import walk, path
+from os import walk, path, chdir, getcwd
 from typing import List
+from contextlib import contextmanager
 
 import pandas as pd
 
@@ -57,3 +58,13 @@ class IO(object):
         fh = open(file, 'w')
         fh.writelines('%s' % item for item in content)
         fh.close()
+
+    @contextmanager
+    def change_dir(self, destination):
+        try:
+            cwd = getcwd()
+            chdir(destination)
+            yield
+        finally:
+            chdir(cwd)
+
