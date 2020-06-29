@@ -14,6 +14,7 @@ from Bio import SeqIO
 from gen3_augur_pyutils.common.combine_df import merge_multiple_columns
 from gen3_augur_pyutils.common.date import date_conform
 from gen3_augur_pyutils.common.io import IO
+from gen3_augur_pyutils.common.io import change_dir
 from gen3_augur_pyutils.common.logger import Logger
 from gen3_augur_pyutils.common.types import ArgParserT, NamespaceT, LoggerT
 from gen3_augur_pyutils.subcommands import Subcommand
@@ -32,6 +33,7 @@ class ParseGenBank(Subcommand):
                             help='path of manifest file having object data describing files')
         parser.add_argument('--fasta', required=True, help='path of output fasta file')
         parser.add_argument('--metadata', required=True, help='path of output metadata file')
+        parser.add_argument('--mapper', required=True, help='path to country region mapping file')
         parser.add_argument('--logfile', required=True, help='path of the log file')
 
     @classmethod
@@ -98,7 +100,7 @@ class ParseGenBank(Subcommand):
         metadata_df.rename(columns={'collection_date': 'date'}, inplace=True)
 
         # Add region information
-        with IO.change_dir("./config"):
+        with change_dir("./config"):
             mapper = pd.read_csv('country_region_mapper.csv')
             metadata_df = merge_multiple_columns(metadata_df, mapper, 'country', ['name', 'alpha-2', 'alpha-3'], 'region')
 
