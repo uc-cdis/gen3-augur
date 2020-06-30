@@ -10,6 +10,7 @@ from typing import Tuple, Dict
 
 import pandas as pd
 from Bio import SeqIO
+from pathlib import Path
 
 from gen3_augur_pyutils.common.combine_df import merge_multiple_columns
 from gen3_augur_pyutils.common.date import date_conform
@@ -33,7 +34,6 @@ class ParseGenBank(Subcommand):
                             help='path of manifest file having object data describing files')
         parser.add_argument('--fasta', required=True, help='path of output fasta file')
         parser.add_argument('--metadata', required=True, help='path of output metadata file')
-        parser.add_argument('--mapper', required=True, help='path to country region mapping file')
         parser.add_argument('--logfile', required=True, help='path of the log file')
 
     @classmethod
@@ -78,6 +78,7 @@ class ParseGenBank(Subcommand):
         :param options:
         :return:
         """
+        print(path.dirname(__file__))
         logger = Logger.get_logger(cls.__tool_name__(), options.logfile)
         logger.info(cls.__get_description__())
 
@@ -100,14 +101,15 @@ class ParseGenBank(Subcommand):
         metadata_df.rename(columns={'collection_date': 'date'}, inplace=True)
 
         # Add region information
-        with change_dir("./config"):
-            mapper = pd.read_csv('country_region_mapper.csv')
+        dir_path = Path(__file__).resolve().parents[2]
+        with change_dir(dir_path):
+            mapper = pd.read_csv('./config/country_region_mapper.csv')
             metadata_df = merge_multiple_columns(metadata_df, mapper, 'country', ['name', 'alpha-2', 'alpha-3'], 'region')
 
         # Write sequence into a multifastq file
         IO.write_file(options.fasta, seq)
 
-        # Merge Manifest and Metadataxczv
+        # Merge Manifest and Metadata
         merge_manifest = metadata_df.merge(manifest, how='inner', left_on='file', right_on='file_name')
         merge_manifest.rename(columns={'object_id': 'guid'}, inplace=True)
 
