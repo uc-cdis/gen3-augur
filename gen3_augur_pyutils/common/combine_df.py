@@ -4,7 +4,8 @@
 
 def merge_multiple_columns(left_df, right_df, left_merge_column, right_merge_columns, right_target_column):
     """
-    The target column of first dataframe codes information in multiple ways. The second dataframe has multiple columns, each column code the same information in one way.
+    The to be merged column of first dataframe codes information in multiple ways.
+    The second dataframe has multiple columns, each column code the same information in one way.
     This function allows the first dataframe merge on multiple columns from the second dataframe.
     :param left_df: First dataframe
     :param right_df: Second dataframe
