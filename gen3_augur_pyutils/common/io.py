@@ -62,6 +62,11 @@ class IO(object):
     @staticmethod
     @contextmanager
     def change_dir(destination):
+        """
+        Change to destination to do task and change back to the original directory
+        :param destination: Target path performing a task
+        :return: None
+        """
         try:
             cwd = getcwd()
             chdir(destination)
