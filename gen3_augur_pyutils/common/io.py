@@ -59,13 +59,11 @@ class IO(object):
         fh.writelines('%s' % item for item in content)
         fh.close()
 
-
-@contextmanager
-def change_dir(destination):
-    try:
-        cwd = getcwd()
-        print(destination)
-        chdir(destination)
-        yield
-    finally:
-        chdir(cwd)
+    @contextmanager
+    def change_dir(self, destination):
+        try:
+            cwd = getcwd()
+            chdir(destination)
+            yield
+        finally:
+            chdir(cwd)
