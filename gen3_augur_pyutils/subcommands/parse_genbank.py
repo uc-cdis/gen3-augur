@@ -15,7 +15,6 @@ from pathlib import Path
 from gen3_augur_pyutils.common.combine_df import merge_multiple_columns
 from gen3_augur_pyutils.common.date import date_conform
 from gen3_augur_pyutils.common.io import IO
-from gen3_augur_pyutils.common.io import change_dir
 from gen3_augur_pyutils.common.logger import Logger
 from gen3_augur_pyutils.common.types import ArgParserT, NamespaceT, LoggerT
 from gen3_augur_pyutils.subcommands import Subcommand
@@ -107,7 +106,7 @@ class ParseGenBank(Subcommand):
 
         # Add region information
         dir_path = Path(__file__).resolve().parents[2]
-        with change_dir(dir_path):
+        with IO.change_dir(dir_path):
             mapper = pd.read_csv('./config/country_region_mapper.csv')
             metadata_df = merge_multiple_columns(metadata_df, mapper, 'country', ['name', 'alpha-2', 'alpha-3'], 'region')
 
