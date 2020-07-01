@@ -39,21 +39,25 @@ class ParseGenBank(Subcommand):
     @classmethod
     def parse_bg(cls, gbfile: str, logger: LoggerT) -> Tuple[Dict[str, str], str]:
         """
-        Extract metadata and save sequence in fasta format with strain as header
+        Extract metadata and sequence from single genbank file
         :param file: genbank file path
         :return: metadata dict and seq string
         """
         gb_record = SeqIO.read(open(gbfile, 'r'), 'genbank')
         bf = path.basename(gbfile)
+        # Extract metadata from gb_record.features
         metadata = {key: value[0] for key, value in gb_record.features[0].qualifiers.items() if key != "resource"}
+        # Exclude non COVID19 file
         if metadata['organism'] != 'Severe acute respiratory syndrome coronavirus 2':
             logger.info('%s is not Covid19 sample, remove the file', bf)
             return None
+        # Exclude sample without Country information
         try:
             metadata['country'] = metadata['country'].split(':')[0]
         except KeyError:
             logger.error("No location information, remove %s", bf)
             return None
+        # Extract strain information from feature strain/isolate, or annotation source
         try:
             strain = gb_record.features[0].qualifiers['strain'][0]
         except KeyError:
@@ -61,6 +65,7 @@ class ParseGenBank(Subcommand):
                 strain = gb_record.features[0].qualifiers['isolate'][0]
             except KeyError:
                 strain = gb_record.annotations['source']
+        # Concatenate file name with strain to avoid duplicate strain name
         strain = re.sub(' ', '/', strain)
         strain = strain + "-" + bf
         seq = '>' + strain + "\n" + gb_record.seq + "\n"
@@ -106,12 +111,12 @@ class ParseGenBank(Subcommand):
             mapper = pd.read_csv('./config/country_region_mapper.csv')
             metadata_df = merge_multiple_columns(metadata_df, mapper, 'country', ['name', 'alpha-2', 'alpha-3'], 'region')
 
-        # Write sequence into a multifastq file
+        # Write sequence into a multifasta file
         IO.write_file(options.fasta, seq)
 
         # Merge Manifest and Metadata
         merge_manifest = metadata_df.merge(manifest, how='inner', left_on='file', right_on='file_name')
-        merge_manifest.rename(columns={'object_id': 'guid'}, inplace=True)
+        merge_manifest.rename(columns={'object_id': 'guid', 'combines': 'region'}, inplace=True)
 
         # Write merge dataframe
         merge_manifest.to_csv(options.metadata, index=False)
