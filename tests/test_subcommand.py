@@ -1,7 +1,7 @@
 """Tests the gen3_augur_pyutils.subcommands.base module"""
 import unittest
 
-from utils import captured_output
+from utils import cleanup_files, capture_output
 
 from gen3_augur_pyutils.__main__ import main
 from gen3_augur_pyutils.subcommands import Subcommand
@@ -32,10 +32,11 @@ class TestSubcommand(unittest.TestCase):
         self.assertTrue("invalid choice: 'Example'" in stderr.getvalue())
 
     def test_extra_subparser(self):
-        with captured_output() as (_, stderr):
+        with capture_output() as (_, stderr):
             with self.assertRaises(SystemExit) as context:
                 main(args=['Example', '--fake'], extra_subparser=TestSubcommand.Example)
-        self.assertTrue('unrecognized auguments: --fake' in stderr.getvalue())
+        print(stderr.getvalue())
+        self.assertTrue('unrecognized arguments: --fake' in stderr.getvalue())
 
 if __name__ == '__main__':
     unittest.main()

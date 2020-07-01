@@ -1,14 +1,13 @@
-
+"""Tests the `gen3_augur_pyutils.common.io.IO` class"""
 import json
-from os import path, getcwd, listdir
 import tempfile
 import unittest
+from os import path, listdir
 from unittest.mock import patch
-from pandas.util.testing import assert_frame_equal
 
 import pandas as pd
+from pandas.testing import assert_frame_equal
 from utils import cleanup_files
-
 
 from gen3_augur_pyutils.common.io import IO
 
