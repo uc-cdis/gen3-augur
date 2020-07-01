@@ -2,7 +2,6 @@
 @author: Yilin Xu <yilinxu@uchicago.edu>
 """
 
-
 def merge_multiple_columns(left_df, right_df, left_merge_column, right_merge_columns, right_target_column):
     """
     The target column of first dataframe codes information in multiple ways. The second dataframe has multiple columns, each column code the same information in one way.
