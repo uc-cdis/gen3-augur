@@ -1,11 +1,14 @@
 
 import json
+from os import path, getcwd, listdir
 import tempfile
 import unittest
 from unittest.mock import patch
+from pandas.util.testing import assert_frame_equal
 
 import pandas as pd
 from utils import cleanup_files
+
 
 from gen3_augur_pyutils.common.io import IO
 
@@ -30,7 +33,7 @@ class TestCommonIO(unittest.TestCase):
                 json.dump(manifest_obj, o)
 
             res = IO.parse_json(fn)
-            self.assertEqual(res, manifest_frame)
+            assert_frame_equal(res, manifest_frame)
 
         finally:
             cleanup_files(fn)
@@ -46,3 +49,16 @@ class TestCommonIO(unittest.TestCase):
             self.assertEqual(results, contents)
         finally:
             cleanup_files(fn)
+
+    def test_change_dir(self):
+        (fd, fn) = tempfile.mkstemp()
+        newdir = path.dirname(fn)
+        filename = path.basename(fn)
+        with IO.change_dir(newdir):
+            files = listdir()
+        self.assertIn(filename, files)
+        cleanup_files(fn)
+
+
+if __name__ == '__main__':
+    unittest.main()

@@ -36,3 +36,6 @@ class TestSubcommand(unittest.TestCase):
             with self.assertRaises(SystemExit) as context:
                 main(args=['Example', '--fake'], extra_subparser=TestSubcommand.Example)
         self.assertTrue('unrecognized auguments: --fake' in stderr.getvalue())
+
+if __name__ == '__main__':
+    unittest.main()
