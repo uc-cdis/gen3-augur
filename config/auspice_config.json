@@ -1,7 +1,7 @@
 {
   "title": "Nextstrain build for Covid19 virus",
   "maintainers": [
-    {"name": "Yilin Xu"}
+    {"name": "Gen3"}
   ],
   "build_url": "https://github.com/yilinxu/gen3-augur",
   "colorings": [
@@ -44,7 +44,6 @@
   },
   "filters": [
     "country",
-    "region",
-    "author"
+    "region"
   ]
 }
