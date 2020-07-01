@@ -1,6 +1,6 @@
 """Tests the gen3_augur_pyutils.common.date module"""
 import unittest
-from datetime import datetime
+import datetime
 
 from gen3_augur_pyutils.common.date import date_conform
 
@@ -35,3 +35,6 @@ class TestDate(unittest.TestCase):
         date_string_5 = "2020"
         date_5 = date_conform(date_string_5)
         self.assertEqual(date_5, d5)
+
+if __name__ == '__main__':
+    unittest.main()
