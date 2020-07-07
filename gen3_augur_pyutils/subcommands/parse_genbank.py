@@ -115,7 +115,7 @@ class ParseGenBank(Subcommand):
 
         # Merge Manifest and Metadata
         merge_manifest = metadata_df.merge(manifest, how='inner', left_on='file', right_on='file_name')
-        merge_manifest.rename(columns={'object_id': 'guid', 'combines': 'region'}, inplace=True)
+        merge_manifest.rename(columns={'object_id': 'guid'}, inplace=True)
 
         # Write merge dataframe
         merge_manifest.to_csv(options.metadata, index=False)
