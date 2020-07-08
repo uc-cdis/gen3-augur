@@ -82,7 +82,6 @@ class ParseGenBank(Subcommand):
         :param options:
         :return:
         """
-        print(path.dirname(__file__))
         logger = Logger.get_logger(cls.__tool_name__(), options.logfile)
         logger.info(cls.__get_description__())
 
