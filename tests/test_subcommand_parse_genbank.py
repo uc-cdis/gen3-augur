@@ -6,7 +6,7 @@ from pathlib import Path
 from gen3_augur_pyutils.common.io import IO
 from gen3_augur_pyutils.subcommands import ParseGenBank
 
-logger = logging.getLogger("test-parse-genbank")
+logger = logging.getLogger("__name__")
 
 
 class TestSubcommandParseGenbank(unittest.TestCase):
