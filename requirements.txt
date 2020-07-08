@@ -1,4 +1,0 @@
-biopython
-nextstrain-augur
-pandas
-git+https://github.com/yilinxu/augur.git
