@@ -3,3 +3,4 @@ gen3/*credential*
 *.fasta
 *.bg
 gen3_augur_pyutils/subcommands/augur_phylogeny.py
+*.pyc
