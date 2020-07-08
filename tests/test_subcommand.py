@@ -35,7 +35,6 @@ class TestSubcommand(unittest.TestCase):
         with capture_output() as (_, stderr):
             with self.assertRaises(SystemExit) as context:
                 main(args=['Example', '--fake'], extra_subparser=TestSubcommand.Example)
-        print(stderr.getvalue())
         self.assertTrue('unrecognized arguments: --fake' in stderr.getvalue())
 
 if __name__ == '__main__':
