@@ -6,11 +6,11 @@ Extract patient metadata, viral metadata and viral sequence from GenBank .gb fil
 import re
 from itertools import repeat
 from os import path
+from pathlib import Path
 from typing import Tuple, Dict
 
 import pandas as pd
 from Bio import SeqIO
-from pathlib import Path
 
 from gen3_augur_pyutils.common.combine_df import merge_multiple_columns
 from gen3_augur_pyutils.common.date import date_conform
@@ -42,7 +42,8 @@ class ParseGenBank(Subcommand):
         :param file: genbank file path
         :return: metadata dict and seq string
         """
-        gb_record = SeqIO.read(open(gbfile, 'r'), 'genbank')
+        with open(gbfile, 'r') as fh:
+            gb_record = SeqIO.read(fh, 'genbank')
         bf = path.basename(gbfile)
         # Extract metadata from gb_record.features
         metadata = {key: value[0] for key, value in gb_record.features[0].qualifiers.items() if key != "resource"}
@@ -107,7 +108,8 @@ class ParseGenBank(Subcommand):
         dir_path = Path(__file__).resolve().parents[2]
         with IO.change_dir(dir_path):
             mapper = pd.read_csv('./config/country_region_mapper.csv')
-            metadata_df = merge_multiple_columns(metadata_df, mapper, 'country', ['name', 'alpha-2', 'alpha-3'], 'region')
+            metadata_df = merge_multiple_columns(metadata_df, mapper, 'country', ['name', 'alpha-2', 'alpha-3'],
+                                                 'region')
 
         # Write sequence into a multifasta file
         IO.write_file(options.fasta, seq)

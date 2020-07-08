@@ -12,6 +12,6 @@ dependencies:
 - snakemake
 - pip
 - pip:
-  - nextstrain-augur
+  - git+https://github.com/yilinxu/augur.git
   - biopython
   - pandas
