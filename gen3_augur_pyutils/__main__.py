@@ -3,11 +3,11 @@ Main entrypoint for gen3-augur_pyutils.
 """
 
 import argparse
-import datetime
-import sys
 
 from gen3_augur_pyutils.common.logger import Logger
+from gen3_augur_pyutils.subcommands import Gen3Query
 from gen3_augur_pyutils.subcommands import ParseGenBank
+
 
 def main(args=None, extra_subparser=None):
     """
@@ -25,6 +25,8 @@ def main(args=None, extra_subparser=None):
     subparsers.required = True
 
     ParseGenBank.add(subparsers=subparsers)
+    Gen3Query.add(subparsers=subparsers)
+
     if extra_subparser:
         extra_subparser.add(subparsers=subparsers)
 
