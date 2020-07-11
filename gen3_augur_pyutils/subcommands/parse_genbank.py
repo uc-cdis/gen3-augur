@@ -6,7 +6,6 @@ Extract patient metadata, viral metadata and viral sequence from GenBank .gb fil
 import re
 from itertools import repeat
 from os import path
-from pathlib import Path
 from typing import Tuple, Dict
 
 import pandas as pd
@@ -39,7 +38,8 @@ class ParseGenBank(Subcommand):
     def parse_bg(cls, gbfile: str, logger: LoggerT) -> Tuple[Dict[str, str], str]:
         """
         Extract metadata and sequence from single genbank file
-        :param file: genbank file path
+        :param gbfile: genbank file path
+        :param logger: specified logger
         :return: metadata dict and seq string
         """
         with open(gbfile, 'r') as fh:
@@ -79,7 +79,7 @@ class ParseGenBank(Subcommand):
     @classmethod
     def main(cls, options: NamespaceT) -> None:
         """
-        Entrypoint for ParseGeneBank
+        Entry point for ParseGeneBank
         :param options:
         :return:
         """
@@ -95,28 +95,23 @@ class ParseGenBank(Subcommand):
 
         # Parse GenBank files
         res_list = list(map(cls.parse_bg, paths, repeat(logger)))
-        paths = IO.gather_file(options.rawfolder)
-
-        # Parse GenBank files
-        res_list = list(map(cls.parse_bg, paths, repeat(logger)))
         metadata = [x[0] for x in res_list if x is not None]
         seq = [x[1] for x in res_list if x is not None]
         metadata_df = pd.DataFrame(metadata)
         metadata_df.rename(columns={'collection_date': 'date'}, inplace=True)
 
         # Add region information
-        dir_path = Path(__file__).resolve().parents[2]
-        with IO.change_dir(dir_path):
-            mapper = pd.read_csv('./config/country_region_mapper.csv')
-            metadata_df = merge_multiple_columns(metadata_df, mapper, 'country', ['name', 'alpha-2', 'alpha-3'],
-                                                 'region')
+        abs_path = IO.abs_path(2, 'config/country_region_mapper.csv')
+        mapper = pd.read_csv(abs_path)
+        metadata_df = merge_multiple_columns(metadata_df, mapper, 'country', ['name', 'alpha-2', 'alpha-3'],
+                                             'region')
 
-        # Write sequence into a multifasta file
+        # Write sequence into a multi fasta file
         IO.write_file(options.fasta, seq)
 
         # Merge Manifest and Metadata
         merge_manifest = metadata_df.merge(manifest, how='inner', left_on='file', right_on='file_name')
         merge_manifest.rename(columns={'object_id': 'guid'}, inplace=True)
 
-        # Write merge dataframe
+        # Write merge data frame
         merge_manifest.to_csv(options.metadata, index=False)

@@ -5,7 +5,8 @@
 import json
 from contextlib import contextmanager
 from os import walk, path, chdir, getcwd
-from typing import List
+from pathlib import Path
+from typing import List, Dict
 
 import pandas as pd
 
@@ -14,7 +15,7 @@ from gen3_augur_pyutils.common.types import DataFrameT
 
 class IO(object):
     @staticmethod
-    def gather_file(dir: str) -> None:
+    def gather_file(dir: object) -> object:
         """
         :param dir: path of the directory
         :return: files path under the directory
@@ -58,6 +59,30 @@ class IO(object):
         fh = open(file, 'w')
         fh.writelines('%s' % item for item in content)
         fh.close()
+
+    @staticmethod
+    def write_json(file: str, data: Dict) -> None:
+        """
+        Write content into a file
+        :param file: output file path
+        :param data: data to write
+        :return:
+        """
+        jstr = json.dumps(data, ensure_ascii=False, indent=4)
+        with open(file, "w") as outfile:
+            outfile.write(jstr)
+
+    @staticmethod
+    def abs_path(level: int, path: str) -> str:
+        """
+        Absolute path relative to the current file
+        : param level: level of parent
+        : param path: path relative to the common parent with the current file
+        : return: absolute path
+        """
+        dir_path = Path(__file__).resolve().parents[level]
+        abs_path = path.join(dir_path, path)
+        return abs_path
 
     @staticmethod
     @contextmanager
