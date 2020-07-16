@@ -37,7 +37,7 @@ class Gen3Query(Subcommand):
         Helper function for generating token.
         :params url: data common url to query from
         """
-        abs_path = IO.abs_path(2, 'config/country_region_mapper.csv')
+        abs_path = IO.abs_path(2, 'config/credentials.json')
         with open(abs_path, "r") as f:
             creds = json.load(f)
         token_url = url + "user/credentials/api/access_token"
@@ -51,21 +51,21 @@ class Gen3Query(Subcommand):
         :params headers: header for requests which has token
         :params query_obj: dictionary object that has parameters for query
         """
-        api_url = query_obj.url + "guppy/download"
-        if query_obj.filter:
+        api_url = query_obj['url'] + "guppy/download"
+        if query_obj['filter']:
             query = {
-                "type": query_obj.type,
-                "fields": query_obj.fields,
+                "type": query_obj['type'],
+                "fields": query_obj['fields'],
                 "filter": {
                     "=": {
-                        query_obj.filter: query_obj.value
+                        query_obj['filter']: query_obj['value']
                     }
                 }
             }
         else:
             query = {
-                "type": query_obj.type,
-                "fields": query_obj.fields,
+                "type": query_obj['type'],
+                "fields": query_obj['fields'],
             }
 
         response = requests.post(
@@ -75,7 +75,8 @@ class Gen3Query(Subcommand):
         )
         try:
             data = json.loads(response.text)
-            IO.write_json(query_obj.file, data[0])
+            IO.write_json(query_obj['file'], data)
+            return len(data)
         except requests.exceptions.Timeout:
             logger.error("Error querying Guppy, object data query failed")
 
@@ -92,16 +93,19 @@ class Gen3Query(Subcommand):
         logger.info(cls.__get_description__())
 
         # Construct object with argument information
+
         today = date.today()
         day = str(today.strftime("%m%d%y"))
         file_name = options.type + "_" + day + "_manifest.json"
+        rel_path = path.join('data', file_name)
+        file_path = IO.abs_path(2, rel_path)
         fields = options.fields.split(",")
         query_obj = {'type': options.type, 'fields': fields, 'filter': options.filter, 'value': options.value,
-                     'file': file_name, 'ulr': options.url}
-
+                     'file': file_path, 'url': options.url}
         # Get token
-        token = cls.get_token(query_obj.url)
+        token = cls.get_token(query_obj['url'])
         headers = {"Authorization": "bearer " + token}
 
         # Query metadata from Gen3 data common
-        cls.query_manifest(headers, query_obj, logger)
+        size = cls.query_manifest(headers, query_obj, logger)
+        logger.info(f'download manifest files for {size} genomic sequences')
