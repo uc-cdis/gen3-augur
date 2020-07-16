@@ -5,9 +5,9 @@ Query genomic data file and save in json format
 """
 
 import json
-from datetime import date
-
 import requests
+from datetime import date
+from os import path
 
 from gen3_augur_pyutils.common.io import IO
 from gen3_augur_pyutils.common.logger import Logger
@@ -26,10 +26,10 @@ class Gen3Query(Subcommand):
         parser.add_argument('--url', required=True, help='data common url')
         parser.add_argument('--type', required=True, help='define type in guppy query')
         parser.add_argument('--fields', required=True,
-                            help='properties')
+                            help='properties to query that separated with comma')
         parser.add_argument('--filter', required=False, help='property name for filtering')
         parser.add_argument('--value', required=False, help='property value for filtering')
-        parser.add_argument('--logfile', required=True, help='path of the log file')
+        parser.add_argument('--logfile', required=True, help='log file name')
 
     @classmethod
     def get_token(cls, url: str) -> str:
@@ -86,14 +86,17 @@ class Gen3Query(Subcommand):
         :param options:
         :return:
         """
-        logger = Logger.get_logger(cls.__tool_name__(), options.logfile)
+        rel_path = path.join('logs', options.logfile)
+        log_path = IO.abs_path(2, rel_path)
+        logger = Logger.get_logger(cls.__tool_name__(), log_path)
         logger.info(cls.__get_description__())
 
         # Construct object with argument information
         today = date.today()
         day = str(today.strftime("%m%d%y"))
         file_name = options.type + "_" + day + "_manifest.json"
-        query_obj = {'type': options.type, 'fields': options.fields, 'filter': options.filter, 'value': options.value,
+        fields = options.fields.split(",")
+        query_obj = {'type': options.type, 'fields': fields, 'filter': options.filter, 'value': options.value,
                      'file': file_name, 'ulr': options.url}
 
         # Get token

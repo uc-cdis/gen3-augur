@@ -16,3 +16,4 @@ gen3_augur_pyutils/common/types.py
 gen3_augur_pyutils/subcommands/__init__.py
 gen3_augur_pyutils/subcommands/base.py
 gen3_augur_pyutils/subcommands/parse_genbank.py
+gen3_augur_pyutils/subcommands/query_manifest.py
