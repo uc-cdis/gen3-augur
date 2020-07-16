@@ -73,7 +73,7 @@ class IO(object):
             outfile.write(jstr)
 
     @staticmethod
-    def abs_path(level: int, path: str) -> str:
+    def abs_path(level: int, file_path: str) -> str:
         """
         Absolute path relative to the current file
         : param level: level of parent
@@ -81,7 +81,7 @@ class IO(object):
         : return: absolute path
         """
         dir_path = Path(__file__).resolve().parents[level]
-        abs_path = path.join(dir_path, path)
+        abs_path = path.join(dir_path, file_path)
         return abs_path
 
     @staticmethod
