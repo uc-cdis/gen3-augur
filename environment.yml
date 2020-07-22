@@ -12,7 +12,7 @@ dependencies:
 - snakemake=5.10.0
 - pip
 - pip:
-  - git+https://github.com/yilinxu/augur.git
+  - git+https://github.com/uc-cdis/augur.git
   - biopython=1.77
   - pandas=1.0.4
   - pandas=1.0.4
