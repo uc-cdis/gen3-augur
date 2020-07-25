@@ -20,5 +20,6 @@ def merge_multiple_columns(left_df, right_df, left_merge_column, right_merge_col
     merge_columns = [x for x in left_df.columns if right_target_column in x]
     left_df[right_target_column] = left_df[merge_columns].apply(
         lambda x: "".join(x.dropna().astype(str)), axis=1)
+    merge_columns.remove(right_target_column)
     left_df = left_df.drop(columns=merge_columns)
     return left_df
