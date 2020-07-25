@@ -8,6 +8,7 @@ import json
 import requests
 from datetime import date
 from os import path
+import sys
 
 from gen3_augur_pyutils.common.io import IO
 from gen3_augur_pyutils.common.logger import Logger
@@ -109,3 +110,4 @@ class Gen3Query(Subcommand):
         # Query metadata from Gen3 data common
         size = cls.query_manifest(headers, query_obj, logger)
         logger.info(f'download manifest files for {size} genomic sequences')
+        sys.stdout.write(str(size))
