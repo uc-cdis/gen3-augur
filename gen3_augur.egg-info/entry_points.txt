@@ -1,4 +1,0 @@
- 
-        [console_scripts]
-        gen3-augur=gen3_augur_pyutils.__main__:main
-    
