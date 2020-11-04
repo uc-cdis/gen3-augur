@@ -4,16 +4,16 @@ channels:
 - defaults
 dependencies:
 - python=3.6
-- mafft=7.467
-- raxml=8.2.12
-- fasttree=2.1.10
-- iqtree=2.0.3
-- vcftools=0.1.16
-- snakemake=5.10.0
+- mafft
+- raxml
+- fasttree
+- iqtree
+- vcftools
+- snakemake
 - pip
 - pip:
   - git+https://github.com/uc-cdis/augur.git
-  - biopython=1.77
-  - pandas=1.0.4
-  - pandas=1.0.4
-  - requests=2.23.0
+  - biopython
+  - pandas
+  - pandas
+  - requests
