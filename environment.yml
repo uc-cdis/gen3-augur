@@ -1,4 +1,4 @@
-name: augur
+name: gen3-augur
 channels:
 - bioconda
 - defaults
