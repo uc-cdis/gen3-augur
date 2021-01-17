@@ -3,7 +3,7 @@ Access complete genomic sequence from gen3 data common https://chicagoland.pande
 
 ## Download credentials.json from data common and copy the credentials.json into config folder
 ```
-copy credentials.json gen3-augur/config
+copy credentials.json gen3-augur/config/credentials.json
 ```
 
 ## Installing dependencies
