@@ -10,7 +10,7 @@ copy credentials.json gen3-augur/config
 ## Using Conda
 An `environment.yml` file is provided and can be used to build a virtual environment containing all dependencies. Create the environment using:
 ```
-conda env create -f enviroment.yml
+conda env create -f environment.yml
 ```
 Then activate the environment for use:
 ```
