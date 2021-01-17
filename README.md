@@ -28,5 +28,6 @@ cd gen3-augur
 mkdir data
 mkdir logs
 mkdir results
+mkdir auspice
 bash gen3-augur.sh >> logs/run_pipeline.log
 ```
