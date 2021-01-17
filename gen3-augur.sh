@@ -57,6 +57,9 @@ augur ancestral --tree results/covid19_${today}_tree.nwk --alignment results/cov
 echo "Mutation translation"
 augur translate --tree results/covid19_${today}_tree.nwk --ancestral-sequences results/covid19_${today}_nt_muts.json --reference-sequence config/sequence.gb --output results/covid19_${today}_aa_muts.json &&
 
+# Labeling clades as specified in config/clades.tsv
+augur clades --tree results/covid19_${today}_tree.nwk --mutations results/covid19_${today}_nt_muts.json results/covid19_${today}_aa_muts.json --clades config/clades.tsv --output results/covid19_${today}_clade.json
+
 # Export json
 echo "Export json"
-augur export v2 --tree results/covid19_${today}_tree.nwk --metadata data/covid19_${today}_genbank.csv --node-data results/covid19_${today}_branch_lengths.json results/covid19_${today}_traits.json results/covid19_${today}_nt_muts.json results/covid19_${today}_aa_muts.json --colors config/color_schemes.tsv --lat-longs config/latitude_longitude.tsv --auspice-config config/auspice_config.json --output auspice/covid19_${today}.json
+augur export v2 --tree results/covid19_${today}_tree.nwk --metadata data/covid19_${today}_genbank.csv --node-data results/covid19_${today}_branch_lengths.json results/covid19_${today}_traits.json results/covid19_${today}_nt_muts.json results/covid19_${today}_aa_muts.json results/covid19_${today}_clade.json --colors config/color_schemes.tsv --lat-longs config/latitude_longitude.tsv --auspice-config config/auspice_config.json --output auspice/covid19_${today}.json
