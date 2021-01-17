@@ -110,3 +110,11 @@ dmypy.json
 .pytype/
 # Cython debug symbols
 cython_debug/
+# Files under data folder
+/data/*
+# Files under log folder
+/logs/*
+# Files under results
+/results/*
+# Files under auspice
+/auspice/*

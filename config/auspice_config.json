@@ -3,7 +3,7 @@
   "maintainers": [
     {"name": "Gen3"}
   ],
-  "build_url": "https://github.com/yilinxu/gen3-augur",
+  "build_url": "https://github.com/uc-cdis/gen3-augur",
   "colorings": [
     {
       "key": "gt",
@@ -29,11 +29,28 @@
       "key": "region",
       "title": "Region",
       "type": "categorical"
+    },
+     {
+      "key": "division",
+      "title": "Division",
+      "type": "categorical"
+    },
+    {
+      "key": "location",
+      "title": "Location",
+      "type": "categorical"
+    },
+    {
+      "key": "clade",
+      "title": "Clade",
+      "type": "categorical"
     }
   ],
   "geo_resolutions": [
     "country",
-    "region"
+    "region",
+    "division",
+    "location"
   ],
   "panels": [
      "tree",
@@ -44,6 +61,8 @@
   },
   "filters": [
     "country",
-    "region"
+    "region",
+    "division",
+    "location"
   ]
 }
