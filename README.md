@@ -25,5 +25,8 @@ python setup.py develop
 ## Run shell script
 ```
 cd gen3-augur
+mkdir data
+mkdir logs
+mkdir results
 bash gen3-augur.sh >> logs/run_pipeline.log
 ```
