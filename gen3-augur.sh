@@ -5,7 +5,7 @@ today=$(date +'%m%d%y')
 
 # Query manifest
 echo "Query Manifest"
-expect_files=$(gen3-augur Gen3Query --url https://chicagoland.pandemicresponsecommons.org/ --type genomic_file --fields file_name,file_size,md5sum,object_id --filter data_type --value "Complete Genomic Sequence" --logfile genomic_manifest_${today})
+expect_files=$(python -mgen3_augur_pyutils Gen3Query --url https://chicagoland.pandemicresponsecommons.org/ --type genomic_file --fields file_name,file_size,md5sum,object_id --filter data_type --value "Complete Genomic Sequence" --logfile genomic_manifest_${today})
 
 # Setup up gen3-client
 echo "Setup gen3-client"
@@ -26,7 +26,7 @@ done;
 
 # Parse object files, generate metadata.csv
 echo "Parse object file to generate metadata.csv"
-gen3-augur ParseGenBank --rawfolder data/covid19_${today}_rawbg --manifest data/genomic_file_${today}_manifest.json --fasta data/covid19_${today}.fasta --metadata data/covid19_${today}_genbank.csv --logfile logs/parsegenbank_${today}.log &&
+python -mgen3_augur_pyutils ParseGenBank --rawfolder data/covid19_${today}_rawbg --manifest data/genomic_file_${today}_manifest.json --fasta data/covid19_${today}.fasta --metadata data/covid19_${today}_genbank.csv --logfile logs/parsegenbank_${today}.log &&
 
 # Run Augur pipeline
 # Filter

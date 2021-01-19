@@ -31,3 +31,9 @@ mkdir results
 mkdir auspice
 bash gen3-augur.sh >> logs/run_pipeline.log
 ```
+
+## docker run
+
+```
+docker run -v $(pwd)/logs:/home/gen3/logs -v $(pwd)/results:/home/gen3/results -v $(pwd)/data:/home/gen3/data quay.io/cdis/gen3-augur:master
+```
