@@ -3,7 +3,7 @@ Access complete genomic sequence from gen3 data common https://chicagoland.pande
 
 ## Download credentials.json from data common and copy the credentials.json into config folder
 ```
-copy credentials.json gen3-augur/config
+copy credentials.json gen3-augur/config/credentials.json
 ```
 
 ## Installing dependencies
@@ -25,5 +25,9 @@ python setup.py develop
 ## Run shell script
 ```
 cd gen3-augur
+mkdir data
+mkdir logs
+mkdir results
+mkdir auspice
 bash gen3-augur.sh >> logs/run_pipeline.log
 ```
