@@ -118,3 +118,4 @@ cython_debug/
 /results/*
 # Files under auspice
 /auspice/*
+config/credentials.json
