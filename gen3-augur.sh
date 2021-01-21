@@ -26,7 +26,7 @@ expect_files=$(gen3-augur Gen3Query --url "${endpoint}/" --type genomic_file --f
 
 # Setup up gen3-client
 echo "Setup gen3-client"
-./gen3/gen3-client configure --profile=covid19 "--cred=${GEN3_API_KEY}" --apiendpoint=${endpoint}/ &&
+./gen3/gen3-client configure --profile=covid19 "--cred=${GEN3_API_KEY}" --apiendpoint=${endpoint}/
 
 # Download object files
 echo "Download object files"
@@ -43,36 +43,36 @@ done;
 
 # Parse object files, generate metadata.csv
 echo "Parse object file to generate metadata.csv"
-gen3-augur ParseGenBank --rawfolder data/covid19_${today}_rawbg --manifest data/genomic_file_${today}_manifest.json --fasta data/covid19_${today}.fasta --metadata data/covid19_${today}_genbank.csv --logfile logs/parsegenbank_${today}.log &&
+gen3-augur ParseGenBank --rawfolder data/covid19_${today}_rawbg --manifest data/genomic_file_${today}_manifest.json --fasta data/covid19_${today}.fasta --metadata data/covid19_${today}_genbank.csv --logfile logs/parsegenbank_${today}.log
 
 # Run Augur pipeline
 # Filter
 echo "Filter fasta files"
-augur filter --sequences data/covid19_${today}.fasta --metadata data/covid19_${today}_genbank.csv --output results/covid19_${today}_filter.fasta &&
+augur filter --sequences data/covid19_${today}.fasta --metadata data/covid19_${today}_genbank.csv --output results/covid19_${today}_filter.fasta
 
 # Alignment(default mafft tool)
 echo "Run alignment"
-augur align --sequences results/covid19_${today}_filter.fasta --reference-sequence config/sequence.gb --output results/covid19_${today}_aligned.fasta --fill-gaps --nthreads auto &&
+augur align --sequences results/covid19_${today}_filter.fasta --reference-sequence config/sequence.gb --output results/covid19_${today}_aligned.fasta --fill-gaps --nthreads auto
 
 # Create raw tree
 echo "Create raw tree"
-augur tree --alignment results/covid19_${today}_aligned.fasta --output results/covid19_${today}_tree_raw.nwk --nthreads auto &&
+augur tree --alignment results/covid19_${today}_aligned.fasta --output results/covid19_${today}_tree_raw.nwk --nthreads auto
 
 # Refine tree
 echo "Refine tree"
-augur refine --tree results/covid19_${today}_tree_raw.nwk --alignment results/covid19_${today}_aligned.fasta --metadata data/covid19_${today}_genbank.csv --output-tree results/covid19_${today}_tree.nwk --output-node-data results/covid19_${today}_branch_lengths.json --timetree --coalescent opt --date-confidence --date-inference marginal --clock-filter-iqd 4 &&
+augur refine --tree results/covid19_${today}_tree_raw.nwk --alignment results/covid19_${today}_aligned.fasta --metadata data/covid19_${today}_genbank.csv --output-tree results/covid19_${today}_tree.nwk --output-node-data results/covid19_${today}_branch_lengths.json --timetree --coalescent opt --date-confidence --date-inference marginal --clock-filter-iqd 4
 
 # Refine traits
 echo "Refine traits"
-augur traits --tree results/covid19_${today}_tree.nwk --metadata data/covid19_${today}_genbank.csv --output results/covid19_${today}_traits.json --columns country region --confidence &&
+augur traits --tree results/covid19_${today}_tree.nwk --metadata data/covid19_${today}_genbank.csv --output results/covid19_${today}_traits.json --columns country region --confidence
 
 # Ancestry Inference
 echo "Infer ancestry"
-augur ancestral --tree results/covid19_${today}_tree.nwk --alignment results/covid19_${today}_aligned.fasta --output-node-data results/covid19_${today}_nt_muts.json --inference joint &&
+augur ancestral --tree results/covid19_${today}_tree.nwk --alignment results/covid19_${today}_aligned.fasta --output-node-data results/covid19_${today}_nt_muts.json --inference joint
 
 # Mutation Translate
 echo "Mutation translation"
-augur translate --tree results/covid19_${today}_tree.nwk --ancestral-sequences results/covid19_${today}_nt_muts.json --reference-sequence config/sequence.gb --output results/covid19_${today}_aa_muts.json &&
+augur translate --tree results/covid19_${today}_tree.nwk --ancestral-sequences results/covid19_${today}_nt_muts.json --reference-sequence config/sequence.gb --output results/covid19_${today}_aa_muts.json
 
 # Labeling clades as specified in config/clades.tsv
 augur clades --tree results/covid19_${today}_tree.nwk --mutations results/covid19_${today}_nt_muts.json results/covid19_${today}_aa_muts.json --clades config/clades.tsv --output results/covid19_${today}_clade.json

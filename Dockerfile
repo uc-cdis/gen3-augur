@@ -12,8 +12,9 @@ RUN apt-get update \
         apt-utils \
         apt-transport-https \
         jq \
-        vim \
+        procps \
         unzip \
+        vim \
         zip \
     && apt-get clean
 
