@@ -11,12 +11,12 @@ for name in logs data results; do
     fi
 done
 
-if [[ ! -f /gen3/credentials.json ]]; then
-  echo "ERROR: mount /gen3/credentials.json"
+export GEN3_API_KEY="${GEN3_API_KEY:-/gen3/credentials.json}"
+
+if [[ ! -f "$GEN3_API_KEY" ]]; then
+  echo "ERROR: mount api key to: $GEN3_API_KEY"
   exit 1
 fi
-cp /gen3/credentials.json config/ || exit 1
-
 bash ./gen3-augur.sh "$@"
 exitCode=$?
 

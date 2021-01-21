@@ -8,6 +8,7 @@ import json
 import requests
 from datetime import date
 from os import path
+import os
 import sys
 
 from gen3_augur_pyutils.common.io import IO
@@ -38,7 +39,10 @@ class Gen3Query(Subcommand):
         Helper function for generating token.
         :params url: data common url to query from
         """
-        abs_path = IO.abs_path(2, 'config/credentials.json')
+        keyfile = os.getenv("GEN3_API_KEY")
+        if not keyfile:
+            raise Exception("GEN3_API_KEY environment not set - ex: $HOME/.gen3/credentials.json")
+        abs_path = IO.abs_path(2, keyfile)
         with open(abs_path, "r") as f:
             creds = json.load(f)
         token_url = url + "user/credentials/api/access_token"
