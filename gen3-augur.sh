@@ -33,6 +33,7 @@ gen3-augur ParseGenBank --rawfolder data/covid19_${today}_rawbg --manifest data/
 echo "Filter fasta files"
 augur filter --sequences data/covid19_${today}.fasta --exclude config/exclude.txt --metadata data/covid19_${today}_genbank.csv --output results/covid19_${today}_filter.fasta &&
 
+
 # Alignment(default mafft tool)
 echo "Run alignment"
 augur align --sequences results/covid19_${today}_filter.fasta --reference-sequence config/sequence.gb --output results/covid19_${today}_aligned.fasta --fill-gaps --nthreads auto &&
