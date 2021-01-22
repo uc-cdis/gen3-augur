@@ -118,9 +118,7 @@ cython_debug/
 /results/*
 # Files under auspice
 /auspice/*
-<<<<<<< HEAD
 # Credential file
-/config/credentials.json
-=======
-config/credentials.json
->>>>>>> 901f4b3d22ba53af8626fe595caa573537d211d8
+credentials.json
+# Do not install binaries in git
+gen3-client
