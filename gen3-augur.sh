@@ -31,7 +31,7 @@ gen3-augur ParseGenBank --rawfolder data/covid19_${today}_rawbg --manifest data/
 # Run Augur pipeline
 # Filter
 echo "Filter fasta files"
-augur filter --sequences data/covid19_${today}.fasta --metadata data/covid19_${today}_genbank.csv --output results/covid19_${today}_filter.fasta &&
+augur filter --sequences data/covid19_${today}.fasta --exclude config/exclude.txt --metadata data/covid19_${today}_genbank.csv --output results/covid19_${today}_filter.fasta &&
 
 # Alignment(default mafft tool)
 echo "Run alignment"

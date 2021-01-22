@@ -2063,9 +2063,12 @@ country	Europe	49.646237	10.799454
 country	North America	28.2367447	-97.738017
 country	Oceania	-25.0562891	152.008576
 country	South America	-13.083583	-58.470721
+
+country	Viet Nam	14.315424	108.339537
 			
 			
 region	Asia	30.451098	86.654576
+region	Americas	30.451098	86.654576
 			
 location	Adams County (ADA)	40.05777	-91.1353
 location	Alexander County (ALE)	37.16702	-89.36063
