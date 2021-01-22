@@ -32,5 +32,6 @@ RUN bash -i -c 'conda activate gen3-augur && python setup.py develop'
 #    /home/gen3/logs,
 #    /home/gen3/data,
 #    /home/gen3/results,
+#    /home/gen3/auspice,
 #
 CMD [ "bash", "-i", "-c", "bash -i dockerrun.sh | tee logs/run_pipeline_$(date +%Y%m%d%H%M%S).log" ]
