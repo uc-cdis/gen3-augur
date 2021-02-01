@@ -9,6 +9,7 @@ from pathlib import Path
 from typing import List, Dict
 
 import pandas as pd
+import re
 
 from gen3_augur_pyutils.common.types import DataFrameT
 
@@ -71,6 +72,23 @@ class IO(object):
         jstr = json.dumps(data, ensure_ascii=False, indent=4)
         with open(file, "w") as outfile:
             outfile.write(jstr)
+
+    def rm_bk_qt(file:str) -> None:
+        """
+        Remove sqaure bracket and quote in csv file
+        :param file: file path
+        :return:
+        """
+        ifh = open(file, 'r')
+        lines = ifh.readlines()
+        ifh.close()
+        ofh = open(file,'w')
+        for line in lines:
+            line = re.sub(r'[\'\[\]]', "", line)
+            ofh.write(line)      
+        ofh.close()
+        df = pd.read_csv(file)
+        df.to_csv(file,date_format='%Y-%m-%d',header=True,index_label=None,)
 
     @staticmethod
     def abs_path(level: int, file_path: str) -> str:

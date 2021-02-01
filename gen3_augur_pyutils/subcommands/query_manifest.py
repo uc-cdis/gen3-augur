@@ -9,7 +9,9 @@ import requests
 from datetime import date
 from os import path
 import os
+import re
 import sys
+import pandas as pd
 
 from gen3_augur_pyutils.common.io import IO
 from gen3_augur_pyutils.common.logger import Logger
@@ -31,6 +33,7 @@ class Gen3Query(Subcommand):
                             help='properties to query that separated with comma')
         parser.add_argument('--filter', required=False, help='property name for filtering')
         parser.add_argument('--value', required=False, help='property value for filtering')
+        parser.add_argument('--format', required=True, help='output file format')
         parser.add_argument('--logfile', required=True, help='log file name')
 
     @classmethod
@@ -70,7 +73,7 @@ class Gen3Query(Subcommand):
         else:
             query = {
                 "type": query_obj['type'],
-                "fields": query_obj['fields'],
+                "fields": query_obj['fields']
             }
 
         response = requests.post(
@@ -80,10 +83,19 @@ class Gen3Query(Subcommand):
         )
         try:
             data = json.loads(response.text)
-            IO.write_json(query_obj['file'], data)
-            return len(data)
+            if query_obj['format'] == 'json':
+                IO.write_json(query_obj['file'], data)
+                return len(data)
+            else:
+                df = pd.DataFrame(data)
+                df.rename(columns = {"collection_date":"date"},inplace=True)
+                df.to_csv(query_obj['file'],header=True,index=False)
+                IO.rm_bk_qt(query_obj['file'])
+                return len(data)
         except requests.exceptions.Timeout:
             logger.error("Error querying Guppy, object data query failed")
+
+
 
     @classmethod
     def main(cls, options: NamespaceT):
@@ -101,12 +113,12 @@ class Gen3Query(Subcommand):
 
         today = date.today()
         day = str(today.strftime("%m%d%y"))
-        file_name = options.type + "_" + day + "_manifest.json"
+        file_name = options.type + "_" + day + "_manifest." + options.format
         rel_path = path.join('data', file_name)
         file_path = IO.abs_path(2, rel_path)
         fields = options.fields.split(",")
         query_obj = {'type': options.type, 'fields': fields, 'filter': options.filter, 'value': options.value,
-                     'file': file_path, 'url': options.url}
+                     'file': file_path, 'url': options.url, 'format': options.format}
         # Get token
         token = cls.get_token(query_obj['url'])
         headers = {"Authorization": "bearer " + token}
