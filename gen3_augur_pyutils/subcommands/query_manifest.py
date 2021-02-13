@@ -59,6 +59,7 @@ class Gen3Query(Subcommand):
         :params headers: header for requests which has token
         :params query_obj: dictionary object that has parameters for query
         """
+        project = os.getenv("project_id")
         api_url = query_obj['url'] + "guppy/download"
         if query_obj['filter']:
             query = {
@@ -88,7 +89,10 @@ class Gen3Query(Subcommand):
                 return len(data)
             else:
                 df = pd.DataFrame(data)
-                df.rename(columns = {"collection_date":"date"},inplace=True)
+                df.rename(columns = {"collection_date":"date","submitter_id":"strain","county":"location","country_region":"country","continent":"region","province_state":"division"},inplace=True)
+                df['strain'] = df['strain'].apply(lambda r: '_'.join(r.split('_')[:-1]))
+                df['strain'] = df['strain'].str.replace(project+"_",'')
+                df['location'] = ['_'.join(i) for i in zip(df["location"].map(str),df["division"].map(str))]
                 df.to_csv(query_obj['file'],header=True,index=False)
                 IO.rm_bk_qt(query_obj['file'])
                 return len(data)

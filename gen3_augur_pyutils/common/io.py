@@ -88,7 +88,7 @@ class IO(object):
             ofh.write(line)      
         ofh.close()
         df = pd.read_csv(file)
-        df.to_csv(file,date_format='%Y-%m-%d',header=True,index_label=None)
+        df.to_csv(file,date_format='%Y-%m-%d',header=True,index=False)
 
     @staticmethod
     def abs_path(level: int, file_path: str) -> str:

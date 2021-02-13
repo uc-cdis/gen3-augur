@@ -20,9 +20,16 @@ if [[ -z "$endpoint" ]]; then
   exit 1
 fi
 
+if [[ -z "$Project_id" || ! -f "$Project_id" ]]; then
+  echo "Project id does not exist"
+  echo "NOTE: do not specify the project id"
+  echo "    under a github managed folder."
+  exit 1
+fi
+
 # Query manifest
 echo "Query Manifest"
-expect_files=$(gen3-augur Gen3Query --url "${endpoint}/" --type genomic_file --fields file_name,file_size,md5sum,object_id --filter data_type --value "Complete Genomic Sequence" --logfile genomic_manifest_${today})
+expect_files=$(gen3-augur Gen3Query --url "${endpoint}/" --type genomic_file --fields file_name,file_size,md5sum,object_id --filter project_id --value "${Project_id}" --logfile genomic_manifest_${today})
 
 # Setup up gen3-client
 echo "Setup gen3-client"

@@ -9,6 +9,12 @@ download credentials.json from commons
 copy credentials.json $HOME/.gen3/credentials.json
 export GEN3_API_KEY="$HOME/.gen3/credentials.json"
 ```
+## Specify Project id
+
+```
+export Project id = "###"
+```
+Substitute "###" with your project id
 
 ## Install gen3-client
 
