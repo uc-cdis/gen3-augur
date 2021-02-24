@@ -76,7 +76,7 @@ augur tree --alignment results/covid19_${today}_aligned.fasta --output results/c
 
 # Refine tree
 echo "Refine tree"
-augur refine --tree results/covid19_${today}_tree_raw.nwk --alignment results/covid19_${today}_aligned.fasta --metadata data/genomic_file_${today}_manifest.csv --output-tree results/covid19_${today}_tree.nwk --output-node-data results/covid19_${today}_branch_lengths.json --timetree --coalescent opt --date-confidence --date-inference marginal --clock-filter-iqd 4 &&
+augur refine --tree results/covid19_${today}_tree_raw.nwk --alignment results/covid19_${today}_aligned.fasta --metadata data/genomic_file_${today}_manifest.csv --output-tree results/covid19_${today}_tree.nwk --output-node-data results/covid19_${today}_branch_lengths.json --timetree --coalescent opt --date-confidence --date-inference joint --clock-filter-iqd 4 --reroot oldest&&
 
 # Refine traits
 echo "Refine traits"
