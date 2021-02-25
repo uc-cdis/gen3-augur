@@ -1,4 +1,4 @@
-biopython==1.77
-pandas==1.0.1
-setuptools==46.0.0
-requests==2.22.0
+biopython~=1.77
+pandas~=1.0
+setuptools~=46.0
+requests~=2.22
