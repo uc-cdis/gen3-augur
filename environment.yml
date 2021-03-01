@@ -13,6 +13,7 @@ dependencies:
 - pip
 - pip:
   - git+https://github.com/uc-cdis/augur.git
+  - awscli
   - biopython
   - pandas
   - pandas
