@@ -6,6 +6,7 @@ RUN chown -R gen3: /opt/conda
 COPY --chown=gen3:gen3 . /home/gen3
 
 ENV DEBIAN_FRONTEND=noninteractive
+ENV NTHREADS=auto
 
 RUN apt-get update \
     && apt-get install -y \

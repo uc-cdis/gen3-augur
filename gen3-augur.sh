@@ -52,11 +52,11 @@ augur filter --sequences data/covid19_${today}.fasta --metadata data/covid19_${t
 
 # Alignment(default mafft tool)
 echo "Run alignment"
-augur align --sequences results/covid19_${today}_filter.fasta --reference-sequence config/sequence.gb --output results/covid19_${today}_aligned.fasta --fill-gaps --nthreads auto
+augur align --sequences results/covid19_${today}_filter.fasta --reference-sequence config/sequence.gb --output results/covid19_${today}_aligned.fasta --fill-gaps --nthreads ${NTHREADS}
 
 # Create raw tree
 echo "Create raw tree"
-augur tree --alignment results/covid19_${today}_aligned.fasta --output results/covid19_${today}_tree_raw.nwk --nthreads auto
+augur tree --alignment results/covid19_${today}_aligned.fasta --output results/covid19_${today}_tree_raw.nwk --nthreads ${NTHREADS}
 
 # Refine tree
 echo "Refine tree"
