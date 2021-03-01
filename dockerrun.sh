@@ -14,9 +14,7 @@ done
 export GEN3_API_KEY="${GEN3_API_KEY:-/gen3/credentials.json}"
 
 if [[ ! -z "$GEN3_API_ENV" ]]; then
-    echo "$GEN3_API_ENV" > $GEN3_API_KEY
-    echo "sleeping for debugging"
-    sleep 1m
+    echo "$GEN3_API_ENV" | base64 -d > $GEN3_API_KEY
 fi
 
 if [[ ! -f "$GEN3_API_KEY" ]]; then

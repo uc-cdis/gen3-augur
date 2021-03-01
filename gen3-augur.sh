@@ -11,8 +11,7 @@ if [[ -z "$GEN3_API_KEY" || ! -f "$GEN3_API_KEY" ]]; then
   exit 1
 fi
 
-# Generate token using `gen3 api access-token $USER $EXP true`
-endpoint="$(cat "${GEN3_API_KEY}" | awk -F . '{ print $2 }' | base64 --decode 2> /dev/null | jq -r .iss | sed 's@/user$@@')"
+endpoint="$(jq -r .api_key < "${GEN3_API_KEY}" | awk -F . '{ print $2 }' | base64 --decode 2> /dev/null | jq -r .iss | sed 's@/user$@@')"
 if [[ -z "$endpoint" ]]; then
   echo "Unable to determine endpoint from ${GEN3_API_KEY}"
   if ! which jq; then
