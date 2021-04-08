@@ -29,7 +29,7 @@ fi
 
 # Query manifest
 echo "Query Manifest"
-expect_files=$(gen3-augur Gen3Query --url "${endpoint}/" --type genomic_file --fields file_name,file_size,md5sum,object_id --filter project_id --value "${Project_id}" --logfile genomic_manifest_${today})
+expect_files=$(gen3-augur Gen3Query --url "${endpoint}/" --type genomic_file --fields file_name,file_size,md5sum,object_id --filter data_format --value "gb" --logfile genomic_manifest_${today})
 
 # Setup up gen3-client
 echo "Setup gen3-client"
@@ -67,7 +67,11 @@ augur tree --alignment results/covid19_${today}_aligned.fasta --output results/c
 
 # Refine tree
 echo "Refine tree"
-augur refine --tree results/covid19_${today}_tree_raw.nwk --alignment results/covid19_${today}_aligned.fasta --metadata data/covid19_${today}_genbank.csv --output-tree results/covid19_${today}_tree.nwk --output-node-data results/covid19_${today}_branch_lengths.json --timetree --coalescent opt --date-confidence --date-inference marginal --clock-filter-iqd 4
+augur refine --tree results/covid19_${today}_tree_raw.nwk --alignment results/covid19_${today}_aligned.fasta --metadata data/covid19_${today}_genbank.csv --output-tree results/covid19_${today}_tree.nwk --output-node-data results/covid19_${today}_branch_lengths.json --timetree --coalescent opt --date-confidence --date-inference joint --clock-filter-iqd 4 --root oldest&&
+
+# Frequncy
+echo "Frequency json"
+augur frequencies --method kde --metadata data/covid19_${today}_genbank.csv --tree results/covid19_${today}_tree.nwk --output results/covid19_${today}_tip-frequencies.json 
 
 # Refine traits
 echo "Refine traits"

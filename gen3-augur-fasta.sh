@@ -78,6 +78,10 @@ augur tree --alignment results/covid19_${today}_aligned.fasta --output results/c
 echo "Refine tree"
 augur refine --tree results/covid19_${today}_tree_raw.nwk --alignment results/covid19_${today}_aligned.fasta --metadata data/genomic_file_${today}_manifest.csv --output-tree results/covid19_${today}_tree.nwk --output-node-data results/covid19_${today}_branch_lengths.json --timetree --coalescent opt --date-confidence --date-inference joint --clock-filter-iqd 4 --root oldest&&
 
+# Frequncy
+echo "Frequency json"
+augur frequencies --method kde --metadata data/genomic_file_${today}_manifest.csv --tree results/covid19_${today}_tree.nwk --output results/covid19_${today}_tip-frequencies.json 
+
 # Refine traits
 echo "Refine traits"
 augur traits --tree results/covid19_${today}_tree.nwk --metadata data/genomic_file_${today}_manifest.csv --output results/covid19_${today}_traits.json --columns location --confidence &&
