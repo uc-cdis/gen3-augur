@@ -12,7 +12,7 @@ export GEN3_API_KEY="$HOME/.gen3/credentials.json"
 ## Specify Project id
 
 ```
-export project_id = "###"
+export project_id="###"
 ```
 Substitute "###" with your project id
 
