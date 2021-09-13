@@ -53,3 +53,7 @@ bash gen3-augur.sh >> logs/run_pipeline.log
     && docker run --env https_proxy=http://cloud-proxy.internal.io:3128 --env http_proxy=http://cloud-proxy.internal.io:3128 --env no_proxy=localhost,127.0.0.1,169.254.169.254,.internal.io,logs.us-east-1.amazonaws.com,kibana.planx-pla.net -v $(pwd)/logs:/home/gen3/logs -v $(pwd)/results:/home/gen3/results -v $(pwd)/auspice:/home/gen3/auspice -v $(pwd)/data:/home/gen3/data -v $(pwd)/Gen3Secrets:/gen3 --rm --name=augurbatch $IMAGE
 )
 ```
+## cp credential when run docker image
+```
+docker run -v credentials.json:/root/gen3-augur/config/ myimage
+```
