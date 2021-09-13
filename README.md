@@ -55,5 +55,5 @@ bash gen3-augur.sh >> logs/run_pipeline.log
 ```
 ## cp credential when run docker image
 ```
-docker run -v credentials.json:/root/gen3-augur/config/ myimage
+docker run -v ./credentials.json:/root/gen3-augur/config/ -v /root/gen3-augur/auspice/ ./ myimage
 ```
