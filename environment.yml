@@ -1,19 +1,21 @@
 name: gen3-augur
 channels:
-- bioconda
-- defaults
+  - conda-forge
+  - bioconda
+  - defaults
 dependencies:
-- python=3.6
-- mafft
-- raxml
-- fasttree
-- iqtree
-- vcftools
-- snakemake
-- pip
-- pip:
-  - git+https://github.com/uc-cdis/augur.git
-  - biopython
-  - pandas
-  - pandas
-  - requests
+  - augur
+  - python
+  - mafft
+  - nextalign
+  - pangolin
+  - pangolearn
+  - raxml
+  - fasttree
+  - iqtree
+  - vcftools
+  - pip
+  - pip:
+    - biopython
+    - pandas
+    - requests
