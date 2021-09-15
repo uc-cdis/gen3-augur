@@ -41,7 +41,7 @@
       "type": "categorical"
     },
     {
-      "key": "clade",
+      "key": "clade_membership",
       "title": "Clade",
       "type": "categorical"
     },
@@ -59,6 +59,31 @@
       "key": "file_size",
       "title": "Size",
       "type": "continuous"
+    },
+    {
+      "key":"S1_mutations",
+      "title": "S1 mutations",
+      "type": "categorical"
+    },
+    {
+      "key":"emerging_lineage",
+      "title":"Emerging_lineage",
+      "type": "categorical"
+    },
+    {
+      "key":"logistic_growth",
+      "title":"Logistic growth",
+      "type": "continuous"
+    },
+    {
+      "key":"current_frequency",
+      "title":"Current Frequency",
+      "type": "continuous"
+    },
+    {
+      "key": "pango_lineage_local",
+      "title": "PANGO Lineage",
+      "type": "categorical"
     }
   ],
   "geo_resolutions": [
@@ -80,6 +105,10 @@
     "country",
     "region",
     "division",
-    "location"
+    "location",
+    "pango_lineage_local",
+    "current_frequency",
+    "logistic_growth",
+    "clade_membership"
   ]
 }
