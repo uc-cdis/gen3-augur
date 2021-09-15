@@ -25,32 +25,32 @@ echo "Download object files"
 mkdir -p data/covid19_${today}_rawbg
 exist_files=$(ls data/covid19_${today}_rawbg|wc -l)
 
-#while [ ${exist_files} -lt ${expect_files} ];
-#do
-#    echo ${expect_files}
-#    echo ${exist_files}
-#    echo y|bash download.sh
-#    exist_files=$(ls data/covid19_${today}_rawbg|wc -l)
-#done;
+while [ ${exist_files} -lt ${expect_files} ];
+do
+    echo ${expect_files}
+    echo ${exist_files}
+    echo y|bash download.sh
+    exist_files=$(ls data/covid19_${today}_rawbg|wc -l)
+done;
 
 # Substitute '/' to '_' in header for all fasta file
-#cd data/covid19_${today}_rawbg
-#for filename in *; do sed -i "" "s/\//_/g" ${filename}; done
-#cd ../../
+cd data/covid19_${today}_rawbg
+for filename in *; do sed -i "" "s/\//_/g" ${filename}; done
+cd ../../
 
 # Merge multiple fasta into one fasta file
 echo "Merge fasta file"
-#cat data/covid19_${today}_rawbg/*.fasta >> data/covid19_${today}.fasta
+cat data/covid19_${today}_rawbg/*.fasta >> data/covid19_${today}.fasta
 
 # Query metadata, generate metadata.csv
 echo "Query Metadata"
-#expect_files=$(gen3-augur Gen3Query --url "${endpoint}/" --type genomic_file --fields nextstrain_clade,zipcode,continent,country_region,province_state,county,host,organism,sample_type,isolation_source,isolate,collection_date,originating_lab,submitting_lab,submitting_lab_PI,submitter_id,file_name,file_size,md5sum,object_id --filter project_id --value "${project_id}" --format csv --logfile sample_manifest_${today})
+expect_files=$(gen3-augur Gen3Query --url "${endpoint}/" --type genomic_file --fields nextstrain_clade,zipcode,continent,country_region,province_state,county,host,organism,sample_type,isolation_source,isolate,collection_date,originating_lab,submitting_lab,submitting_lab_PI,submitter_id,file_name,file_size,md5sum,object_id --filter project_id --value "${project_id}" --format csv --logfile sample_manifest_${today})
 
 # Run Augur pipeline
 # Alignment(default mafft tool)
 echo "Run alignment"
-#mkdir results/covid19_${today}_translations
-#nextalign --reference config/sequence.fasta --genemap config/annotation.gff.txt --genes "ORF1a,ORF1b,S,ORF3a,M,N" --sequences data/covid19_${today}.fasta --output-dir results/covid19_${today}_translations --output-basename aligned --output-fasta results/covid19_${today}_aligned.fasta --output-insertions results/covid19_${today}_insertions.tsv
+mkdir results/covid19_${today}_translations
+nextalign --reference config/sequence.fasta --genemap config/annotation.gff.txt --genes "ORF1a,ORF1b,S,ORF3a,M,N" --sequences data/covid19_${today}.fasta --output-dir results/covid19_${today}_translations --output-basename aligned --output-fasta results/covid19_${today}_aligned.fasta --output-insertions results/covid19_${today}_insertions.tsv
 
 # Scan aligned sequences for problematic sequences
 python scripts/diagnostic.py --alignment results/covid19_${today}_aligned.fasta --metadata data/genomic_file_${today}_manifest.csv --reference config/sequence.gb --mask-from-beginning 100 --mask-from-end 50 --output-flagged results/covid19_${today}_flagged-sequences.tsv --output-diagnostics results/covid19_${today}_sequence-diagnostics.tsv --output-exclusion-list results/covid19_${today}_to-exclude.txt
