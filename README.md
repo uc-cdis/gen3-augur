@@ -41,7 +41,7 @@ python setup.py develop
 ```
 cd gen3-augur
 mkdir data logs results auspice
-bash gen3-augur.sh >> logs/run_pipeline.log
+bash gen3-augur-il.sh >> logs/run_pipeline.log
 ```
 
 ## docker run
